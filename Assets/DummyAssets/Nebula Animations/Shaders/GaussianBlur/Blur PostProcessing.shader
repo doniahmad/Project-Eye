@@ -1,4 +1,4 @@
-Shader "Custom/GaussianBlur"
+Shader "Hidden/GaussianBlur"
 {
     Properties{
         [HideInInspector]_MainTex ("Texture", 2D) = "white" {}

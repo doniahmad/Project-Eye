@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerInteract : MonoBehaviour
 {
     public static PlayerInteract Instance { get; private set; }
 
-    public float rayDistance = 10;
+    public float rayDistance = 2;
     public LayerMask interactableLayer;
-    public TextMeshProUGUI interactText;
 
     private BaseObject selectedObject;
 
@@ -40,21 +37,20 @@ public class PlayerInteract : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
-
+        Debug.DrawRay(ray.origin, ray.direction * rayDistance, Color.red);
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
-            if (hit.transform.TryGetComponent(out BaseObject baseObject))
+            float distanceToTarget = (hit.transform.position - transform.position).magnitude;
+            Debug.Log("distance target : " + distanceToTarget);
+            if (hit.transform.TryGetComponent(out BaseObject baseObject) && distanceToTarget < rayDistance)
             {
                 if (baseObject != selectedObject)
                 {
                     SetSelectedObject(baseObject);
-                    interactText.gameObject.SetActive(true);
-                    interactText.text = baseObject.name;
                 }
             }
             else
             {
-                interactText.gameObject.SetActive(false);
                 SetSelectedObject(null);
             }
         }
@@ -63,6 +59,11 @@ public class PlayerInteract : MonoBehaviour
     private void SetSelectedObject(BaseObject baseObject)
     {
         this.selectedObject = baseObject;
+    }
+
+    public BaseObject GetSelectedObject()
+    {
+        return selectedObject;
     }
 
 }
