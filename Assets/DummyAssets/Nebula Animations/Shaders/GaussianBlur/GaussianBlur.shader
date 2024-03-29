@@ -1,4 +1,4 @@
-Shader "Custom/BlurShader"
+Shader "Hidden/BlurShader"
 {
     Properties{
         [HideInInspector]_MainTex ("Texture", 2D) = "white" {}
