@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -36,7 +35,8 @@ public class InputManager : MonoBehaviour
         look.ProcessLook(player.Look.ReadValue<Vector2>());
     }
 
-    private Vector2 GetVector2Normalized() {
+    private Vector2 GetVector2Normalized()
+    {
         Vector2 inputVector = player.Movement.ReadValue<Vector2>();
 
         inputVector = inputVector.normalized;

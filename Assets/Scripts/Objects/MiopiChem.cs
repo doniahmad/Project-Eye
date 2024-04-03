@@ -8,7 +8,7 @@ public class MiopiChem : BaseObject
     public PostProcessVolume postProcessVolume;
     public PostProcessProfile postProcessProfile;
 
-    public override void Interact(PlayerInteract player)
+    public override void Interact(PlayerController player)
     {
         Debug.Log(postProcessVolume.sharedProfile);
         if (postProcessVolume.sharedProfile != postProcessProfile)

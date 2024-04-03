@@ -19,10 +19,9 @@ public class InterarctUI : MonoBehaviour
     void Update()
     {
         selectedGameObject = playerInteract.GetSelectedObject();
-        Debug.Log(selectedGameObject);
         if (selectedGameObject != null)
         {
-            interactText.text = selectedGameObject.name;
+            interactText.text = "[F] " + selectedGameObject.InteractCommand;
             Show();
         }
         else
