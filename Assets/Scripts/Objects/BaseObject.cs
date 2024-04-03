@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BaseObject : MonoBehaviour
 {
-    public virtual void Interact(PlayerInteract player)
+    public string InteractCommand = "Take Item";
+
+    public virtual void Interact(PlayerController player)
     {
         Debug.Log("Interact");
     }

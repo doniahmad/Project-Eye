@@ -12,7 +12,7 @@ public class TritanomalyChem : BaseObject
         mainCamera = Camera.main;
     }
 
-    public override void Interact(PlayerInteract player)
+    public override void Interact(PlayerController player)
     {
         // Get the colorBlindness from a child object of the camera
         ColorBlindness colorBlindness = mainCamera.GetComponent<ColorBlindness>();
