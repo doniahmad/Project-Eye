@@ -3,14 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaceableItem : BaseObject
+public class PlaceableItem : BaseItem
 {
-    // public event EventHandler OnPlaceItem;
-    // public class OnPlaceItemEventArgs : EventArgs
-    // {
-    //     public ItemObjectSO itemObjectSO;
-    // }
-
     private ItemObjectSO itemObjectSO;
     private Vector3 placementPosition;
     private PlayerInventory playerInventory;
@@ -21,8 +15,11 @@ public class PlaceableItem : BaseObject
         itemObjectSO = playerInventory.GetSelectedInventoryItem();
         placementPosition = player.GetPlayerInteract().GetPlacementPosition();
 
-        Instantiate(itemObjectSO.prefab, placementPosition, Quaternion.identity);
-        playerInventory.RemoveItem(itemObjectSO);
-        player.GetPlayerInteract().SetSelectedObject(null);
+        if (itemObjectSO != null)
+        {
+            Instantiate(itemObjectSO.prefab, placementPosition, itemObjectSO.prefab.rotation);
+            playerInventory.RemoveItem(itemObjectSO);
+            player.GetPlayerInteract().SetSelectedObject(null);
+        }
     }
 }

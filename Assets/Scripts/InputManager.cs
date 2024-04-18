@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
         look = GetComponent<PlayerLook>();
         interact = GetComponent<PlayerInteract>();
 
-        player.Jump.performed += ctx => motor.Jump();
+        // player.Jump.performed += ctx => motor.Jump();
         player.Interact.performed += ctx => interact.OnInteractAction();
     }
 
@@ -43,11 +43,12 @@ public class InputManager : MonoBehaviour
 
         return inputVector;
     }
-    private void OnEnable()
+
+    public void OnEnable()
     {
         player.Enable();
     }
-    private void OnDisable()
+    public void OnDisable()
     {
         player.Disable();
     }

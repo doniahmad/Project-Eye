@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : BaseObject
+public class Item : BaseItem
 {
     [SerializeField] private ItemObjectSO itemObjectSO;
 
