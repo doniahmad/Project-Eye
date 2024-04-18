@@ -6,7 +6,7 @@ public class PlayerInteract : MonoBehaviour
 {
     public float rayDistance = 2;
     public LayerMask interactableLayer;
-    private BaseObject selectedObject;
+    private BaseItem selectedObject;
     private PlayerController playerController;
     private PlayerInventory playerInventory;
     private Transform showedItem;
@@ -40,17 +40,18 @@ public class PlayerInteract : MonoBehaviour
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
             // if ray detect BaseObject
-            if (hit.transform.TryGetComponent(out BaseObject baseObject))
+            if (hit.transform.TryGetComponent(out BaseItem baseItem))
             {
-                // if baseObject is not same with selectedObject
-                if (baseObject != selectedObject)
+                // if baseItem is not same with selectedObject
+                if (baseItem != selectedObject)
                 {
-                    if (baseObject.gameObject.CompareTag("PlaceableArea"))
+                    // Check if the object tag is PlaceableArea
+                    if (baseItem.gameObject.CompareTag("PlaceableArea"))
                     {
                         if (playerInventory.GetSelectedInventoryItem())
                         {
                             onPlaceableArea = true;
-                            SetSelectedObject(baseObject);
+                            SetSelectedObject(baseItem);
                         }
                         else
                         {
@@ -59,7 +60,8 @@ public class PlayerInteract : MonoBehaviour
                     }
                     else
                     {
-                        SetSelectedObject(baseObject);
+                        onPlaceableArea = false;
+                        SetSelectedObject(baseItem);
                     }
                 }
 
@@ -89,7 +91,7 @@ public class PlayerInteract : MonoBehaviour
         ItemObjectSO selectedItem = playerInventory.GetSelectedInventoryItem();
         if (showedItem == null)
         {
-            showedItem = Instantiate(selectedItem.onPlacementPrefab, pos, Quaternion.identity);
+            showedItem = Instantiate(selectedItem.onPlacementPrefab, pos, selectedItem.onPlacementPrefab.rotation);
         }
         else
         {
@@ -107,12 +109,12 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
-    public void SetSelectedObject(BaseObject baseObject)
+    public void SetSelectedObject(BaseItem baseItem)
     {
-        this.selectedObject = baseObject;
+        this.selectedObject = baseItem;
     }
 
-    public BaseObject GetSelectedObject()
+    public BaseItem GetSelectedObject()
     {
         return selectedObject;
     }

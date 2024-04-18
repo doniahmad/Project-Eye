@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public event EventHandler<OnItemStoredEventArgs> OnItemStored;
-    public class OnItemStoredEventArgs : EventArgs
+    public event EventHandler<ItemEventArgs> OnItemStored;
+    public event EventHandler<ItemEventArgs> OnItemRemoved;
+    public class ItemEventArgs : EventArgs
     {
         public ItemObjectSO itemObjectSO;
     }
@@ -35,7 +36,7 @@ public class PlayerInventory : MonoBehaviour
             listChemicalObjectSOs.Add(itemObjectSO);
             inventoryUI.AddItem(itemObjectSO);
             SetSelectedInventoryItem(itemObjectSO);
-            OnItemStored?.Invoke(this, new OnItemStoredEventArgs { itemObjectSO = itemObjectSO });
+            OnItemStored?.Invoke(this, new ItemEventArgs { itemObjectSO = itemObjectSO });
             return true;
         }
         return false;
@@ -51,6 +52,7 @@ public class PlayerInventory : MonoBehaviour
         listChemicalObjectSOs.Remove(itemObjectSO);
         inventoryUI.RemoveItem(itemObjectSO);
         SetSelectedInventoryItem(null);
+        OnItemRemoved?.Invoke(this, new ItemEventArgs { itemObjectSO = itemObjectSO });
     }
 
     public void SetSelectedInventoryItem(ItemObjectSO itemObjectSO)
@@ -68,8 +70,8 @@ public class PlayerInventory : MonoBehaviour
 
         if (selectedItem != null)
         {
-            selectedItem.prefab.transform.localPosition = Vector3.zero;
-            instantiatedObject = Instantiate(selectedItem.prefab, showItemPosition, showItemPosition.parent.gameObject);
+            instantiatedObject = Instantiate(selectedItem.prefab, showItemPosition.position, showItemPosition.rotation, showItemPosition);
+            instantiatedObject.localScale = Vector3.one;
         }
     }
 

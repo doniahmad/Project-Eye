@@ -8,7 +8,7 @@ public class InterarctUI : MonoBehaviour
     public GameObject container;
     public PlayerInteract playerInteract;
     public TextMeshProUGUI interactText;
-    private BaseObject selectedGameObject;
+    private BaseItem selectedGameObject;
 
     void Start()
     {
