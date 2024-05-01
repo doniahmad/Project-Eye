@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cee546f3af9a38498bbc37e0aaace32, type: 3}
+  m_Name: ListTutorialTask
+  m_EditorClassIdentifier: 
+  isComplete: 0
+  PhaseTask: Tutorial
+  listTaskSO:
+  - {fileID: 11400000, guid: d9ffb5877d6e36b49a6f57c632bd2620, type: 2}
+  - {fileID: 11400000, guid: 062737858e0e6804daa2246a3d7e6743, type: 2}
+  - {fileID: 11400000, guid: ac7cecacfff018e4382ae4231289285e, type: 2}
+  - {fileID: 11400000, guid: ca9ca6860727a2841ac7bfcd6b405c9b, type: 2}

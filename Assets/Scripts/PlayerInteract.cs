@@ -28,7 +28,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if (selectedObject != null)
         {
-            selectedObject.Interact(PlayerController.Instance);
+            selectedObject.Interact(playerController);
         }
     }
 
@@ -55,6 +55,7 @@ public class PlayerInteract : MonoBehaviour
                         }
                         else
                         {
+                            SetSelectedObject(null);
                             onPlaceableArea = false;
                         }
                     }
@@ -78,6 +79,10 @@ public class PlayerInteract : MonoBehaviour
                     HideItemPlacement();
                 }
             }
+            else
+            {
+                SetSelectedObject(null);
+            }
         }
         else
         {
@@ -91,7 +96,10 @@ public class PlayerInteract : MonoBehaviour
         ItemObjectSO selectedItem = playerInventory.GetSelectedInventoryItem();
         if (showedItem == null)
         {
-            showedItem = Instantiate(selectedItem.onPlacementPrefab, pos, selectedItem.onPlacementPrefab.rotation);
+            if (selectedItem != null)
+            {
+                showedItem = Instantiate(selectedItem.onPlacementPrefab, pos, selectedItem.onPlacementPrefab.rotation);
+            }
         }
         else
         {

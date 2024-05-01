@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5413498314713940277}
   - component: {fileID: 917924330220204059}
   - component: {fileID: -4843981035276502488}
-  m_Layer: 0
+  - component: {fileID: 3478823333647723206}
+  m_Layer: 7
   m_Name: Table Wastafle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6491371916248937676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.50000006, y: 0.49999988, z: 0.50000006, w: -0.4999999}
+  m_LocalRotation: {x: -0.4998778, y: -0.4998778, z: -0.50012213, w: 0.50012213}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 112.797615, z: 100}
+  m_LocalScale: {x: 100, y: 112.797615, z: 150}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.972, y: 0, z: -90}
 --- !u!33 &5413498314713940277
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -106,3 +107,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2013049666664737483, guid: 5bc1c116951f1b84e9b37a1c86e748e2, type: 3}
+--- !u!114 &3478823333647723206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6491371916248937676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270bde7752e022f4abb8aa551ec64107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractCommand: Wash Hand

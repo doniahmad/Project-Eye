@@ -46,6 +46,7 @@ public class ItemRecipeManager : MonoBehaviour
             {
                 displayCraftedItem.UpdateItem(recipe.outputItem);
                 craftingMinigame.StartCraftingMinigame();
+                craftingUI.craftingStatus = CraftingUI.CraftingStatus.Crafting;
                 break;
             }
         }

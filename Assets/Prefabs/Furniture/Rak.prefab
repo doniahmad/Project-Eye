@@ -1,5 +1,73 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4211981320167073134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561849945601391769}
+  - component: {fileID: 9077062282171247048}
+  - component: {fileID: 961556050984097083}
+  m_Layer: 7
+  m_Name: ItemCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &561849945601391769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211981320167073134}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3254990635220183457}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9077062282171247048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211981320167073134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8189c256c42464bae250caf2cbab3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractCommand: Take Chemical A
+  itemObjectSO: {fileID: 11400000, guid: 5132bf434f4afba4f852ee1597c76d2b, type: 2}
+--- !u!65 &961556050984097083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211981320167073134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.71957695, y: 0.7895981, z: 0.9878894}
+  m_Center: {x: -0.034860995, y: -0.0069046016, z: -0.006055236}
 --- !u!1 &5516171276381812383
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,8 +79,9 @@ GameObject:
   - component: {fileID: 6384127210246736281}
   - component: {fileID: 2343860687267421665}
   - component: {fileID: 7843727170084285710}
-  - component: {fileID: 7488054000903322889}
-  m_Layer: 0
+  - component: {fileID: 6600275500235773737}
+  - component: {fileID: 6149751282560283476}
+  m_Layer: 7
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,13 +96,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5516171276381812383}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.50000006, y: -0.4999999, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0.35885692, y: 0.044501107, z: 0.5656091}
   m_LocalScale: {x: 62.36512, y: 57.062405, z: 57.062405}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3254990635220183457}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
 --- !u!33 &2343860687267421665
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -85,8 +154,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7488054000903322889
-MeshCollider:
+--- !u!65 &6600275500235773737
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,10 +172,24 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1550514412580984892, guid: c3502c29d1555074089524e250846dc1, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.018154012, y: 0.000606912, z: 0.015583553}
+  m_Center: {x: -0.00904053, y: -0.0003032961, z: -0.0008188725}
+--- !u!114 &6149751282560283476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516171276381812383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185e6a113d466cb46a960dc0b934f61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractCommand: Take Item
+  openAngle: -90
+  rotationSpeed: 2
 --- !u!1 &5566666728097039319
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +202,7 @@ GameObject:
   - component: {fileID: 5467251340664491511}
   - component: {fileID: 2582380850071242064}
   - component: {fileID: 841845926576813260}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,5 +327,6 @@ Transform:
   m_Children:
   - {fileID: 194058721372608055}
   - {fileID: 6384127210246736281}
+  - {fileID: 561849945601391769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

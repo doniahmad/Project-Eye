@@ -5,13 +5,24 @@ using UnityEngine;
 
 public class CraftingUI : MonoBehaviour
 {
+    public enum CraftingStatus
+    {
+        Empty,
+        Filled,
+        Crafting,
+        Crafted,
+    }
+
     public event EventHandler<ListStoredItemEventArgs> OnCraftingSlotChanged;
     public class ListStoredItemEventArgs : EventArgs
     {
         public List<ItemObjectSO> listItemInCraftingSlot;
     }
 
+    public CraftingStatus craftingStatus;
+
     public GameObject container;
+    [SerializeField] private InteractUI interactUI;
     private PlayerController playerController;
     [Header("Inventory Side")]
     public List<ItemUI> invetorySlot = new List<ItemUI>();
@@ -20,7 +31,7 @@ public class CraftingUI : MonoBehaviour
     [Header("Crafting Side")]
     private List<ItemUI> craftingSlot = new List<ItemUI>();
     private List<ItemObjectSO> listItemInCraftingSlot = new List<ItemObjectSO>();
-    [SerializeField] private ItemUI craftedItem;
+    public ItemUI craftedItem;
 
     private void Awake()
     {
@@ -42,13 +53,18 @@ public class CraftingUI : MonoBehaviour
         ClearCraftItem();
         Hide();
         Debug.Log("Failed Crafting");
+        craftingStatus = CraftingStatus.Empty;
     }
 
     private void CraftingMinigame_OnSuccessCrafting(object sender, EventArgs e)
     {
         ClearCraftItem();
         Hide();
-        playerInventory.TryStoreItem(craftedItem.itemObjectSO);
+        if (craftedItem != null && craftedItem.itemObjectSO.prefab != null)
+        {
+            playerInventory.TryStoreItem(craftedItem.itemObjectSO);
+        }
+        craftingStatus = CraftingStatus.Crafted;
         Debug.Log("Success Crafting " + craftedItem.itemObjectSO.objectName);
     }
 
@@ -101,6 +117,7 @@ public class CraftingUI : MonoBehaviour
         itemUI.UpdateItem(itemObjectSO);
         listItemInCraftingSlot.Add(itemObjectSO);
         craftingSlot.Add(itemUI);
+        craftingStatus = CraftingStatus.Filled;
 
         OnCraftingSlotChanged?.Invoke(this, new ListStoredItemEventArgs { listItemInCraftingSlot = listItemInCraftingSlot });
     }
@@ -122,6 +139,7 @@ public class CraftingUI : MonoBehaviour
             listItemInCraftingSlot.Remove(craftingSlot[i].itemObjectSO);
             craftingSlot.Remove(craftingSlot[i]);
         }
+        craftingStatus = CraftingStatus.Empty;
     }
 
     public void Hide()
@@ -129,18 +147,29 @@ public class CraftingUI : MonoBehaviour
         if (playerController != null)
         {
             playerController.EnableControl();
-            UIManager.Instance.ShowOverlay();
         }
         container.SetActive(false);
+        interactUI.onNewDisplay = false;
     }
 
     public void Show()
     {
         container.SetActive(true);
+        interactUI.onNewDisplay = true;
     }
 
     public void SetPlayerControl(PlayerController playerController)
     {
         this.playerController = playerController;
+    }
+
+    public List<ItemUI> GetListCraftingSlot()
+    {
+        return craftingSlot;
+    }
+
+    public List<ItemObjectSO> GetListItemInCraftingSlot()
+    {
+        return listItemInCraftingSlot;
     }
 }

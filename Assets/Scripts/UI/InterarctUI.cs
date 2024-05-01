@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class InterarctUI : MonoBehaviour
+public class InteractUI : MonoBehaviour
 {
     public GameObject container;
     public PlayerInteract playerInteract;
     public TextMeshProUGUI interactText;
     private BaseItem selectedGameObject;
+    public bool onNewDisplay = false;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class InterarctUI : MonoBehaviour
     void Update()
     {
         selectedGameObject = playerInteract.GetSelectedObject();
-        if (selectedGameObject != null)
+        if (selectedGameObject != null && !onNewDisplay)
         {
             interactText.text = "[F] " + selectedGameObject.InteractCommand;
             Show();

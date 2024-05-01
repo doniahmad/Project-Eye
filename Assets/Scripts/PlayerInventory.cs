@@ -57,7 +57,10 @@ public class PlayerInventory : MonoBehaviour
 
     public void SetSelectedInventoryItem(ItemObjectSO itemObjectSO)
     {
-        selectedItem = itemObjectSO;
+        if (itemObjectSO != null)
+        {
+            selectedItem = itemObjectSO;
+        }
         ShowItem();
     }
 
@@ -68,7 +71,7 @@ public class PlayerInventory : MonoBehaviour
             Destroy(instantiatedObject.gameObject);
         }
 
-        if (selectedItem != null)
+        if (selectedItem != null && selectedItem.prefab != null)
         {
             instantiatedObject = Instantiate(selectedItem.prefab, showItemPosition.position, showItemPosition.rotation, showItemPosition);
             instantiatedObject.localScale = Vector3.one;

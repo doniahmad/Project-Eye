@@ -24,8 +24,6 @@ public class Item : BaseItem
         {
             DestroySelf();
         };
-
-
     }
 
     public Item GetItemObject()
