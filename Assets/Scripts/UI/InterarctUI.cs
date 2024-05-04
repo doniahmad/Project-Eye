@@ -22,7 +22,7 @@ public class InteractUI : MonoBehaviour
         selectedGameObject = playerInteract.GetSelectedObject();
         if (selectedGameObject != null && !onNewDisplay)
         {
-            interactText.text = "[F] " + selectedGameObject.InteractCommand;
+            interactText.text = "[" + InputManager.Instance.GetBindingText(InputManager.Binding.Interact) + "] " + selectedGameObject.InteractCommand;
             Show();
         }
         else

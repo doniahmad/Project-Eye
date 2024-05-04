@@ -148,12 +148,14 @@ public class CraftingUI : MonoBehaviour
         {
             playerController.EnableControl();
         }
+        UIManager.Instance.ShowOverlay();
         container.SetActive(false);
         interactUI.onNewDisplay = false;
     }
 
     public void Show()
     {
+        UIManager.Instance.HideOverlay();
         container.SetActive(true);
         interactUI.onNewDisplay = true;
     }

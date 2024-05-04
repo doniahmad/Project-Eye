@@ -17,6 +17,7 @@ public class ItemContainer : BaseItem
 
         if (playerInventory.TryStoreItem(GetItemObjectSO()))
         {
+            Debug.Log("Success Get " + itemObjectSO.objectName);
         };
     }
 

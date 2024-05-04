@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 118058665327412240}
   - component: {fileID: 1906331042297866968}
   m_Layer: 7
-  m_Name: rakdoorright
+  m_Name: rakdoorleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 5374649025598352418}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.3609028, y: 0.23289587, z: -0.74}
+  m_LocalPosition: {x: -0.072, y: 0.23289587, z: -0.74}
   m_LocalScale: {x: 60.488583, y: 57.062405, z: 57.062405}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractCommand: Open Rak
-  openRadius: -1.47
+  openRadius: 1.47
   openSpeed: 2
 --- !u!1 &5623657736389749973
 GameObject:
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 820067037995466683}
   - component: {fileID: 1239351020829304005}
   m_Layer: 7
-  m_Name: rakdoorleft
+  m_Name: rakdoorright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,7 +293,7 @@ Transform:
   m_GameObject: {fileID: 5623657736389749973}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.5524746, y: 0.4314733, z: -0.76676613}
+  m_LocalPosition: {x: -0.099, y: 0.4314733, z: -0.76676613}
   m_LocalScale: {x: 60.488583, y: 57.062405, z: 57.062405}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractCommand: Open Rak
-  openRadius: 1.47
+  openRadius: -1.47
   openSpeed: 2
 --- !u!64 &1239351020829304005
 MeshCollider:

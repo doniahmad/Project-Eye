@@ -23,22 +23,6 @@ public class VisualEffectManager : MonoBehaviour
         ResetEffect();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ApplyHypermetropia();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ApplyCataract();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ApplyMonochromacy();
-        }
-    }
-
     public void ResetEffect()
     {
         blurPostProcessing.enabled = false;

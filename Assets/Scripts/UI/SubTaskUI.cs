@@ -29,11 +29,13 @@ public class SubTaskUI : MonoBehaviour
     public void EnableSubtask()
     {
         subtaskTitle.color = Color.black;
+        subtaskTitle.fontStyle = FontStyles.Normal;
     }
 
     public void DisbaleSubtask()
     {
-        subtaskTitle.color = Color.red;
+        subtaskTitle.color = Color.gray;
+        subtaskTitle.fontStyle = FontStyles.Strikethrough;
     }
 
     public void DestroySubtask()

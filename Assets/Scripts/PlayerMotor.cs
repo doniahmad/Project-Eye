@@ -20,6 +20,11 @@ public class PlayerMotor : MonoBehaviour
         playerController = GetComponent<PlayerController>();
     }
 
+    private void FixedUpdate()
+    {
+        ProcessMove(InputManager.Instance.GetVector2Normalized());
+    }
+
     // Update is called once per frame
     // void Update()
     // {

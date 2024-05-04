@@ -19,11 +19,10 @@ public class Item : BaseItem
     public override void Interact(PlayerController player)
     {
         PlayerInventory playerInventory = player.GetPlayerInventory();
-
-        if (playerInventory.TryStoreItem(GetItemObjectSO()))
+        if (playerInventory.TryStoreItem(GetItemObjectSO()) == true)
         {
             DestroySelf();
-        };
+        }
     }
 
     public Item GetItemObject()

@@ -24,9 +24,20 @@ public class PlayerInventory : MonoBehaviour
         listChemicalObjectSOs = new List<ItemObjectSO>();
     }
 
-    private void Update()
+    private void Start()
     {
+        InputManager.Instance.OnInventory1Action += InputManager_OnInventory1Action;
+        InputManager.Instance.OnInventory2Action += InputManager_OnInventory2Action;
+    }
 
+    private void InputManager_OnInventory2Action(object sender, EventArgs e)
+    {
+        SetSelectedInventoryItem(inventoryUI.itemUI[1].itemObjectSO);
+    }
+
+    private void InputManager_OnInventory1Action(object sender, EventArgs e)
+    {
+        SetSelectedInventoryItem(inventoryUI.itemUI[0].itemObjectSO);
     }
 
     public bool TryStoreItem(ItemObjectSO itemObjectSO)
@@ -57,10 +68,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void SetSelectedInventoryItem(ItemObjectSO itemObjectSO)
     {
-        if (itemObjectSO != null)
-        {
-            selectedItem = itemObjectSO;
-        }
+        selectedItem = itemObjectSO;
         ShowItem();
     }
 
@@ -71,7 +79,7 @@ public class PlayerInventory : MonoBehaviour
             Destroy(instantiatedObject.gameObject);
         }
 
-        if (selectedItem != null && selectedItem.prefab != null)
+        if (selectedItem != null)
         {
             instantiatedObject = Instantiate(selectedItem.prefab, showItemPosition.position, showItemPosition.rotation, showItemPosition);
             instantiatedObject.localScale = Vector3.one;
