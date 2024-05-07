@@ -9,6 +9,8 @@ public class CraftingMinigame : MonoBehaviour
     public static event EventHandler OnSuccessCrafting;
     public static event EventHandler OnFailedCrafting;
 
+    public static CraftingMinigame Instance { get; private set; }
+
     [SerializeField] private RectTransform greenArea;
     [SerializeField] private RectTransform pointer;
     [SerializeField] private float pointerSpeed;
@@ -22,8 +24,10 @@ public class CraftingMinigame : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         PointerHide();
         GreenAreaHide();
+        craftingButton.interactable = false;
     }
 
     private void Start()
@@ -133,6 +137,15 @@ public class CraftingMinigame : MonoBehaviour
 
         pointerMove = true;
 
+        craftingButton.interactable = true;
+
         craftingButton.onClick.AddListener(HandleCrafting);
+    }
+
+    public void ResetCraftingMinigame()
+    {
+        PointerHide();
+        GreenAreaHide();
+        craftingButton.interactable = false;
     }
 }

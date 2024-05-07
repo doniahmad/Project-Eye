@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CraftingUI : MonoBehaviour
@@ -20,8 +21,9 @@ public class CraftingUI : MonoBehaviour
     }
 
     public CraftingStatus craftingStatus;
-
+    public CraftingDeviceItem craftingDevice;
     public GameObject container;
+    public GameObject craftingMinigameUI;
     [SerializeField] private InteractUI interactUI;
     private PlayerController playerController;
     [Header("Inventory Side")]
@@ -46,26 +48,44 @@ public class CraftingUI : MonoBehaviour
         playerInventory.OnItemRemoved += PlayerInventory_OnItemRemoved;
         CraftingMinigame.OnSuccessCrafting += CraftingMinigame_OnSuccessCrafting;
         CraftingMinigame.OnFailedCrafting += CraftingMinigame_OnFailedCrafting;
+        ItemRecipeManager.Instance.OnRecipeFound += ItemRecipeManager_OnItemFound;
+        ItemRecipeManager.Instance.OnRecipeNotFound += ItemRecipeManager_OnItemNotFound;
+    }
+
+    private void ItemRecipeManager_OnItemFound(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ItemRecipeManager_OnItemNotFound(object sender, EventArgs e)
+    {
+        ClearCraftItem();
+        Hide();
+        CraftingMinigame.Instance.ResetCraftingMinigame();
+        Debug.Log("Item Not Found");
     }
 
     private void CraftingMinigame_OnFailedCrafting(object sender, EventArgs e)
     {
+
         ClearCraftItem();
         Hide();
+        CraftingMinigame.Instance.ResetCraftingMinigame();
         Debug.Log("Failed Crafting");
-        craftingStatus = CraftingStatus.Empty;
     }
 
     private void CraftingMinigame_OnSuccessCrafting(object sender, EventArgs e)
     {
-        ClearCraftItem();
-        Hide();
-        if (craftedItem != null && craftedItem.itemObjectSO.prefab != null)
-        {
-            playerInventory.TryStoreItem(craftedItem.itemObjectSO);
-        }
         craftingStatus = CraftingStatus.Crafted;
-        Debug.Log("Success Crafting " + craftedItem.itemObjectSO.objectName);
+        if (craftedItem != null)
+        {
+            if (playerInventory.TryStoreItem(craftedItem.itemObjectSO))
+            {
+                ClearCraftItem();
+                Hide();
+                CraftingMinigame.Instance.ResetCraftingMinigame();
+            }
+        }
     }
 
     private void PlayerInventory_OnItemRemoved(object sender, PlayerInventory.ItemEventArgs e)
@@ -124,8 +144,8 @@ public class CraftingUI : MonoBehaviour
 
     public void RemoveCraftItem(ItemUI itemUI)
     {
-        itemUI.ClearItem();
         listItemInCraftingSlot.Remove(itemUI.itemObjectSO);
+        itemUI.ClearItem();
         craftingSlot.Remove(itemUI);
 
         OnCraftingSlotChanged?.Invoke(this, new ListStoredItemEventArgs { listItemInCraftingSlot = listItemInCraftingSlot });
@@ -136,9 +156,11 @@ public class CraftingUI : MonoBehaviour
         for (int i = 0; i < craftingSlot.Count; i++)
         {
             craftingSlot[i].ClearItem();
-            listItemInCraftingSlot.Remove(craftingSlot[i].itemObjectSO);
-            craftingSlot.Remove(craftingSlot[i]);
         }
+
+        craftingSlot.Clear();
+        listItemInCraftingSlot.Clear();
+        craftedItem.ClearItem();
         craftingStatus = CraftingStatus.Empty;
     }
 
@@ -149,8 +171,8 @@ public class CraftingUI : MonoBehaviour
             playerController.EnableControl();
         }
         UIManager.Instance.ShowOverlay();
-        container.SetActive(false);
         interactUI.onNewDisplay = false;
+        container.SetActive(false);
     }
 
     public void Show()
@@ -159,6 +181,16 @@ public class CraftingUI : MonoBehaviour
         container.SetActive(true);
         interactUI.onNewDisplay = true;
     }
+
+    // public void HideCraftingUI()
+    // {
+    //     craftingMinigameUI.SetActive(false);
+    // }
+
+    // public void ShowCraftingUI()
+    // {
+    //     craftingMinigameUI.SetActive(true);
+    // }
 
     public void SetPlayerControl(PlayerController playerController)
     {

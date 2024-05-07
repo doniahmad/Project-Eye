@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0351e68f64bfadf44af49c7cd78973cb, type: 3}
+  m_Name: Chem F Recipe
+  m_EditorClassIdentifier: 
+  listItems:
+  - {fileID: 11400000, guid: cf639b303d1e89542b71cf212b536bca, type: 2}
+  - {fileID: 11400000, guid: d69d903b383c94441a26ae270d520a8a, type: 2}
+  - {fileID: 11400000, guid: 7ebec09535f2bf443b1b376771162d3e, type: 2}
+  outputItem: {fileID: 11400000, guid: 399967a37fffc214fb6330331d55b7ef, type: 2}
+  recipeName: Chemical F

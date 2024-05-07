@@ -133,9 +133,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5749183576951152534, guid: 768e4798ae2c3d94faf3df2a806b3f17, type: 3}
+      propertyPath: m_Name
+      value: crafted
+      objectReference: {fileID: 0}
+    - target: {fileID: -5063223942988036812, guid: 768e4798ae2c3d94faf3df2a806b3f17, type: 3}
+      propertyPath: m_Name
+      value: slot 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2914413575082383075, guid: 768e4798ae2c3d94faf3df2a806b3f17, type: 3}
+      propertyPath: m_Name
+      value: slot 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 768e4798ae2c3d94faf3df2a806b3f17, type: 3}
       propertyPath: m_Name
       value: 'Crafting '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245042011116262203, guid: 768e4798ae2c3d94faf3df2a806b3f17, type: 3}
+      propertyPath: m_Name
+      value: slot 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743480366618694112, guid: 768e4798ae2c3d94faf3df2a806b3f17, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

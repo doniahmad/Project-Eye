@@ -10,6 +10,8 @@ public class Loader : MonoBehaviour
         MainMenuManager,
         LoadingScene,
         LaboratoryScene,
+        FumehoodScene,
+        StorageScene
     }
 
     public static Scene targetScene;

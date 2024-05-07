@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : BaseItem
 {
     [SerializeField] private ItemObjectSO itemObjectSO;
+    public MeshRenderer itemMaterial;
 
     public ItemObjectSO GetItemObjectSO()
     {

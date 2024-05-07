@@ -15,12 +15,40 @@ public class VisualEffectManager : MonoBehaviour
     BlurPostProcessing blurPostProcessing;
     ColorBlindness colorBlindness;
 
+    private int effect = 1;
+
     private void Awake()
     {
         blurPostProcessing = playerCam.GetComponent<BlurPostProcessing>();
         colorBlindness = playerCam.GetComponent<ColorBlindness>();
 
         ResetEffect();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            switch (effect)
+            {
+                case 1:
+                    ApplyHypermetropia();
+                    effect = 2;
+                    break;
+                case 2:
+                    ApplyMonochromacy();
+                    effect = 3;
+                    break;
+                case 3:
+                    ApplyCataract();
+                    effect = 0;
+                    break;
+                default:
+                    ResetEffect();
+                    effect = 1;
+                    break;
+            }
+        }
     }
 
     public void ResetEffect()

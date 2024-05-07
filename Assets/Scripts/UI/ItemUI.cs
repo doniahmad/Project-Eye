@@ -46,15 +46,21 @@ public class ItemUI : MonoBehaviour
     {
         if (rectTransform == null || itemSprite == null)
             return;
+        // Get parent RectTransform
+        RectTransform parentRectTransform = rectTransform.GetComponent<RectTransform>();
 
-        float containerWidth = rectTransform.GetComponent<RectTransform>().rect.width;
-        float containerHeight = rectTransform.GetComponent<RectTransform>().rect.height;
+        // Get parent's width and height
+        float containerWidth = parentRectTransform.rect.width;
+        float containerHeight = parentRectTransform.rect.height;
 
+        // Get image's original width and height
         float imageWidth = itemSprite.sprite.rect.width;
         float imageHeight = itemSprite.sprite.rect.height;
 
+        // Calculate scale factor to fit image inside parent
         float scaleFactor = Mathf.Min(containerWidth / imageWidth, containerHeight / imageHeight);
 
-        rectTransform.sizeDelta = new Vector2(imageWidth * scaleFactor, imageHeight * scaleFactor);
+        itemSprite.rectTransform.sizeDelta = new Vector2(imageWidth, imageHeight) * scaleFactor;
+
     }
 }

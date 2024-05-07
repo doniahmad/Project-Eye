@@ -6,6 +6,7 @@ public class PlayerMotor : MonoBehaviour
 {
     private CharacterController controller;
     private PlayerController playerController;
+    private bool onChangePosition;
     // private Vector3 playerVelocity;
     // private bool isGrounded;
     public float moveSpeed = 5.0f;
@@ -54,6 +55,13 @@ public class PlayerMotor : MonoBehaviour
         // if (isGrounded && playerVelocity.y < 0)
         //     playerVelocity.y = -2f;
         // controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+    public void ChangePlayerPosition(Transform pos)
+    {
+        controller.enabled = false;
+        transform.position = pos.position;
+        controller.enabled = true;
     }
 
     // public void Jump()

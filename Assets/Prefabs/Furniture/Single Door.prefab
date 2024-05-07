@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1224841722957641954}
   - component: {fileID: 4582984099706027844}
   - component: {fileID: -8077620276171339791}
-  m_Layer: 0
+  - component: {fileID: 7794125810841989280}
+  m_Layer: 7
   m_Name: Single Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d37bcba5772ccf469e052cbd6bf953a, type: 2}
+  - {fileID: -3846018093981099296, guid: 4b250a4c997e07b40bc5f00d1795a6e5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,3 +107,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -106404279080511032, guid: 5bc1c116951f1b84e9b37a1c86e748e2, type: 3}
+--- !u!114 &7794125810841989280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9108894295376382968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183f3c408d907fe47a4577738548b1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractCommand: Masuk Fumehood
+  key: {fileID: 0}
+  targetScene: 3
