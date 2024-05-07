@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class ItemRecipeManager : MonoBehaviour
 {
+    public event EventHandler OnRecipeFound;
+    public event EventHandler OnRecipeNotFound;
+    public static ItemRecipeManager Instance { get; private set; }
+
     [SerializeField] private CraftingUI craftingUI;
     [SerializeField] private ListItemRecipeSO listItemRecipeSO;
     [SerializeField] private ItemUI displayCraftedItem;
     [SerializeField] private CraftingMinigame craftingMinigame;
     private List<ItemObjectSO> itemInCraftingSlot;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -19,36 +28,45 @@ public class ItemRecipeManager : MonoBehaviour
     private void CraftingUI_OnCraftingSlotChanged(object sender, CraftingUI.ListStoredItemEventArgs e)
     {
         itemInCraftingSlot = e.listItemInCraftingSlot;
-
-        foreach (ItemRecipeSO recipe in listItemRecipeSO.listItemRecipeSO)
+        if (itemInCraftingSlot.Count == 3)
         {
-            bool allItemsFound = true;
-
-            foreach (ItemObjectSO neededItem in recipe.listItems)
+            bool foundRecipe = false;
+            foreach (ItemRecipeSO recipe in listItemRecipeSO.listItemRecipeSO)
             {
-                bool foundItem = false;
-                foreach (ItemObjectSO itemInSlot in itemInCraftingSlot)
+                bool allItemsFound = true;
+
+                foreach (ItemObjectSO neededItem in recipe.listItems)
                 {
-                    if (neededItem == itemInSlot)
+                    bool foundItem = false;
+                    foreach (ItemObjectSO itemInSlot in itemInCraftingSlot)
                     {
-                        foundItem = true;
+                        if (neededItem == itemInSlot)
+                        {
+                            foundItem = true;
+                            break;
+                        }
+                    }
+                    if (!foundItem)
+                    {
+                        allItemsFound = false;
                         break;
                     }
                 }
-                if (!foundItem)
+
+                if (allItemsFound)
                 {
-                    allItemsFound = false;
+                    displayCraftedItem.UpdateItem(recipe.outputItem);
+                    craftingMinigame.StartCraftingMinigame();
+                    craftingUI.craftingStatus = CraftingUI.CraftingStatus.Crafting;
+                    foundRecipe = true;
+                    OnRecipeFound?.Invoke(this, EventArgs.Empty);
                     break;
                 }
             }
-
-            if (allItemsFound)
+            if (foundRecipe == false)
             {
-                displayCraftedItem.UpdateItem(recipe.outputItem);
-                craftingMinigame.StartCraftingMinigame();
-                break;
+                OnRecipeNotFound?.Invoke(this, EventArgs.Empty);
             }
         }
-
     }
 }

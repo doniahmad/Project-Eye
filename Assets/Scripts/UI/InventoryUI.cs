@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour
 {
     public List<ItemUI> itemUI = new List<ItemUI>();
     public PlayerInventory playerInventory;
+    public Sprite onSelectInventory;
 
     private void Awake()
     {

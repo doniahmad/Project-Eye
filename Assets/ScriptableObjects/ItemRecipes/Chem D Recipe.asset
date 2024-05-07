@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Chem D Recipe
   m_EditorClassIdentifier: 
   listItems:
-  - {fileID: 11400000, guid: 5132bf434f4afba4f852ee1597c76d2b, type: 2}
   - {fileID: 11400000, guid: 497d64e652ea2aa48a5883550c493123, type: 2}
   - {fileID: 11400000, guid: b7ae44709fb3b7947a5ecd6604ad5ad0, type: 2}
+  - {fileID: 11400000, guid: 7ebec09535f2bf443b1b376771162d3e, type: 2}
   outputItem: {fileID: 11400000, guid: cf639b303d1e89542b71cf212b536bca, type: 2}
   recipeName: Chemical D

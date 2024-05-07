@@ -10,6 +10,11 @@ public class PlayerLook : MonoBehaviour
     public float xSensitivity = 30f;
     public float ySensitivity = 30f;
 
+    private void LateUpdate()
+    {
+        ProcessLook(InputManager.Instance.GetLookVector2());
+    }
+
     public void ProcessLook(Vector2 input)
     {
         float mouseX = input.x;

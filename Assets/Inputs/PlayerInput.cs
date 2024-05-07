@@ -53,6 +53,33 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""65b7cb9b-7a61-4f1e-86c5-e30a963a6590"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inventory 1"",
+                    ""type"": ""Button"",
+                    ""id"": ""a239434e-5a94-43ca-9b49-c5f6c1cd807a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inventory 2"",
+                    ""type"": ""Button"",
+                    ""id"": ""a50fe092-b6dc-4152-a769-8d7b7d8e4eed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -198,6 +225,39 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccb336c5-0796-4d26-84cf-f85185013977"",
+                    ""path"": ""<Keyboard>/{Cancel}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6a27ac2-00ce-4ad8-bb6b-6f9e6e14f019"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory 1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3822abcc-e0aa-4a88-a620-41da84517030"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory 2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -209,6 +269,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_OnFoot_Movement = m_OnFoot.FindAction("Movement", throwIfNotFound: true);
         m_OnFoot_Look = m_OnFoot.FindAction("Look", throwIfNotFound: true);
         m_OnFoot_Interact = m_OnFoot.FindAction("Interact", throwIfNotFound: true);
+        m_OnFoot_Escape = m_OnFoot.FindAction("Escape", throwIfNotFound: true);
+        m_OnFoot_Inventory1 = m_OnFoot.FindAction("Inventory 1", throwIfNotFound: true);
+        m_OnFoot_Inventory2 = m_OnFoot.FindAction("Inventory 2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +336,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnFoot_Movement;
     private readonly InputAction m_OnFoot_Look;
     private readonly InputAction m_OnFoot_Interact;
+    private readonly InputAction m_OnFoot_Escape;
+    private readonly InputAction m_OnFoot_Inventory1;
+    private readonly InputAction m_OnFoot_Inventory2;
     public struct OnFootActions
     {
         private @PlayerInput m_Wrapper;
@@ -280,6 +346,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_OnFoot_Movement;
         public InputAction @Look => m_Wrapper.m_OnFoot_Look;
         public InputAction @Interact => m_Wrapper.m_OnFoot_Interact;
+        public InputAction @Escape => m_Wrapper.m_OnFoot_Escape;
+        public InputAction @Inventory1 => m_Wrapper.m_OnFoot_Inventory1;
+        public InputAction @Inventory2 => m_Wrapper.m_OnFoot_Inventory2;
         public InputActionMap Get() { return m_Wrapper.m_OnFoot; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -298,6 +367,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
+            @Inventory1.started += instance.OnInventory1;
+            @Inventory1.performed += instance.OnInventory1;
+            @Inventory1.canceled += instance.OnInventory1;
+            @Inventory2.started += instance.OnInventory2;
+            @Inventory2.performed += instance.OnInventory2;
+            @Inventory2.canceled += instance.OnInventory2;
         }
 
         private void UnregisterCallbacks(IOnFootActions instance)
@@ -311,6 +389,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
+            @Inventory1.started -= instance.OnInventory1;
+            @Inventory1.performed -= instance.OnInventory1;
+            @Inventory1.canceled -= instance.OnInventory1;
+            @Inventory2.started -= instance.OnInventory2;
+            @Inventory2.performed -= instance.OnInventory2;
+            @Inventory2.canceled -= instance.OnInventory2;
         }
 
         public void RemoveCallbacks(IOnFootActions instance)
@@ -333,5 +420,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
+        void OnInventory1(InputAction.CallbackContext context);
+        void OnInventory2(InputAction.CallbackContext context);
     }
 }

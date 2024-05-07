@@ -8,11 +8,6 @@ public class PlayerAnimation : MonoBehaviour
     public string RUN_PARAMS = "IsRunning";
     [SerializeField] private Animator anim;
 
-    private void Start()
-    {
-
-    }
-
     public void StartMoveAnimation()
     {
         anim.SetBool(MOVE_PARAMS, true);

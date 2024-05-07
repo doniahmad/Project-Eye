@@ -1,28 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button OptionButton;
-    [SerializeField] private Button ExitButton;
+    public static MainMenuManager Instance { get; set; }
+
+    public Button playButton;
+    public Button optionButton;
+    public Button exitButton;
 
     private void Awake()
     {
+        Instance = this;
+        // playbutton
         playButton.onClick.AddListener(() =>
         {
             Loader.Load(Loader.Scene.LaboratoryScene);
         });
-        OptionButton.onClick.AddListener(() =>
-        {
 
+        optionButton.onClick.AddListener(() =>
+        {
+            OptionUI.Instance.Show();
         });
-        ExitButton.onClick.AddListener(() =>
+        exitButton.onClick.AddListener(() =>
         {
             Application.Quit();
         });
 
+    }
+
+    public Button SetSelectedButton(Button selectedButton)
+    {
+        selectedButton.Select();
+        return selectedButton;
     }
 }

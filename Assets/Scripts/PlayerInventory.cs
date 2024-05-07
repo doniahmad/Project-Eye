@@ -24,9 +24,20 @@ public class PlayerInventory : MonoBehaviour
         listChemicalObjectSOs = new List<ItemObjectSO>();
     }
 
-    private void Update()
+    private void Start()
     {
+        InputManager.Instance.OnInventory1Action += InputManager_OnInventory1Action;
+        InputManager.Instance.OnInventory2Action += InputManager_OnInventory2Action;
+    }
 
+    private void InputManager_OnInventory2Action(object sender, EventArgs e)
+    {
+        SetSelectedInventoryItem(inventoryUI.itemUI[1].itemObjectSO);
+    }
+
+    private void InputManager_OnInventory1Action(object sender, EventArgs e)
+    {
+        SetSelectedInventoryItem(inventoryUI.itemUI[0].itemObjectSO);
     }
 
     public bool TryStoreItem(ItemObjectSO itemObjectSO)

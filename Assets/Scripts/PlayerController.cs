@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private PlayerMotor playerMotor;
     private PlayerLook playerLook;
     private PlayerAnimation playerAnimation;
+    private PlayerStatus playerStatus;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         playerMotor = GetComponent<PlayerMotor>();
         playerLook = GetComponent<PlayerLook>();
         playerAnimation = GetComponent<PlayerAnimation>();
+        playerStatus = GetComponent<PlayerStatus>();
     }
 
     public PlayerInteract GetPlayerInteract()
@@ -58,5 +60,15 @@ public class PlayerController : MonoBehaviour
     public void EnableControl()
     {
         playerInput.OnEnable();
+    }
+
+    public PlayerStatus.Status GetPlayerStatus()
+    {
+        return playerStatus.status;
+    }
+
+    public void SetPlayerStatus(PlayerStatus.Status status)
+    {
+        playerStatus.status = status;
     }
 }

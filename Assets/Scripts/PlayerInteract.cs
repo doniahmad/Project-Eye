@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,16 +8,20 @@ public class PlayerInteract : MonoBehaviour
     public float rayDistance = 2;
     public LayerMask interactableLayer;
     private BaseItem selectedObject;
-    private PlayerController playerController;
     private PlayerInventory playerInventory;
-    private Transform showedItem;
+    private Item showedItem;
     private Vector3 currentHitPoint;
     private bool onPlaceableArea;
 
     private void Start()
     {
-        playerController = GetComponent<PlayerController>();
-        playerInventory = playerController.GetPlayerInventory();
+        playerInventory = PlayerController.Instance.GetPlayerInventory();
+        InputManager.Instance.OnInteractAction += InputManager_OnInteractAction;
+    }
+
+    private void InputManager_OnInteractAction(object sender, EventArgs e)
+    {
+        OnInteractAction();
     }
 
     private void Update()
@@ -24,7 +29,7 @@ public class PlayerInteract : MonoBehaviour
         HandleInteraction();
     }
 
-    public void OnInteractAction()
+    private void OnInteractAction()
     {
         if (selectedObject != null)
         {
@@ -55,6 +60,7 @@ public class PlayerInteract : MonoBehaviour
                         }
                         else
                         {
+                            SetSelectedObject(null);
                             onPlaceableArea = false;
                         }
                     }
@@ -67,16 +73,17 @@ public class PlayerInteract : MonoBehaviour
 
                 if (onPlaceableArea)
                 {
-                    if (hit.point != currentHitPoint)
-                    {
-                        ShowItemPlacement(hit.point);
-                        currentHitPoint = hit.point;
-                    }
+                    ShowItemPlacement(hit.point);
+
                 }
                 else
                 {
                     HideItemPlacement();
                 }
+            }
+            else
+            {
+                SetSelectedObject(null);
             }
         }
         else
@@ -91,11 +98,16 @@ public class PlayerInteract : MonoBehaviour
         ItemObjectSO selectedItem = playerInventory.GetSelectedInventoryItem();
         if (showedItem == null)
         {
-            showedItem = Instantiate(selectedItem.onPlacementPrefab, pos, selectedItem.onPlacementPrefab.rotation);
+            showedItem = Instantiate(selectedItem.onPlacementPrefab, pos, selectedItem.onPlacementPrefab.rotation).GetComponent<Item>();
+        }
+        else if (showedItem.GetItemObjectSO() != selectedItem)
+        {
+            HideItemPlacement();
+            showedItem = Instantiate(selectedItem.onPlacementPrefab, pos, selectedItem.onPlacementPrefab.rotation).GetComponent<Item>();
         }
         else
         {
-            showedItem.position = Vector3.Lerp(showedItem.position, pos, 20 * Time.deltaTime);
+            showedItem.transform.position = Vector3.Lerp(showedItem.transform.position, pos, 20 * Time.deltaTime);
         }
     }
 
@@ -112,6 +124,7 @@ public class PlayerInteract : MonoBehaviour
     public void SetSelectedObject(BaseItem baseItem)
     {
         this.selectedObject = baseItem;
+        HideItemPlacement();
     }
 
     public BaseItem GetSelectedObject()
@@ -121,7 +134,7 @@ public class PlayerInteract : MonoBehaviour
 
     public Vector3 GetPlacementPosition()
     {
-        return showedItem.position;
+        return showedItem.transform.position;
     }
 
 }
