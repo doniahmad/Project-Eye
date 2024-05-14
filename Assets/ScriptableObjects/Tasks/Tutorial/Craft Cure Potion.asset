@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1050dd0b729841af60437f3caa56b, type: 3}
   m_Name: Craft Cure Potion
   m_EditorClassIdentifier: 
-  isComplete: 0
+  isComplete: 1
   taskName: Campurkan Item Yang Sudah didapatkan
-  taskUncheckedIcon: {fileID: 21300000, guid: 5cee40fb9b4e0e64a9952abc643ead64, type: 3}
-  taskCheckedIcon: {fileID: 21300000, guid: 5cee40fb9b4e0e64a9952abc643ead64, type: 3}
+  dialogue:
+    dialogueLines: []
   listSubtasks:
   - {fileID: 11400000, guid: c82300c459837cc4bab9369a9b949b44, type: 2}

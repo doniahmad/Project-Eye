@@ -18,10 +18,13 @@ public class Item : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        PlayerInventory playerInventory = player.GetPlayerInventory();
-        if (playerInventory.TryStoreItem(GetItemObjectSO()) == true)
+        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty || player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
         {
-            DestroySelf();
+            PlayerInventory playerInventory = player.GetPlayerInventory();
+            if (playerInventory.TryStoreItem(GetItemObjectSO()) == true)
+            {
+                DestroySelf();
+            }
         }
     }
 

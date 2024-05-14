@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LockedCupboardMinigame : MonoBehaviour
 {
+    public static LockedCupboardMinigame Instance { get; set; }
+
     public List<LockedCupboardDoor> cupboardDoor;
     public Transform cupboardStuff;
     public LockedCupboardUI lockedCupboardUI;

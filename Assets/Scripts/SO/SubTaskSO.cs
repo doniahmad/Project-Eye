@@ -24,6 +24,7 @@ public class SubTaskSO : ScriptableObject
         GloveHand,
         WriteWhiteboard,
         OpenLockedCupboard,
+        GoToFumehood,
         FixFumeHoodDoor,
         FindRedKey,
         OpenWerehouse,
@@ -32,6 +33,7 @@ public class SubTaskSO : ScriptableObject
     public bool isOneTimeEvent;
     public bool isComplete = false;
     public string taskName;
+    public Dialogue dialogue;
     public TaskCategory taskCategory;
 
     // Properti khusus untuk Gathering Task

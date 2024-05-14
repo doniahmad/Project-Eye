@@ -99,8 +99,9 @@ public class OptionUI : MonoBehaviour
 
     private void UpdateVisual()
     {
-        musicText.text = MathF.Round(MusicManager.Instance.GetVolume() * 100).ToString();
-        soundText.text = MathF.Round(SoundManager.Instance.GetVolume() * 100).ToString();
+        Debug.Log("Music Volume: " + Mathf.Round(MusicManager.Instance.GetVolume() * 100).ToString());
+        musicText.text = Mathf.Round(MusicManager.Instance.GetVolume() * 100).ToString();
+        soundText.text = Mathf.Round(SoundManager.Instance.GetVolume() * 100).ToString();
         sliderMusic.sizeDelta = new Vector2(Mathf.Round(MusicManager.Instance.GetVolume() * 100 / 100 * maxSliderWidth), sliderMusic.sizeDelta.y);
 
         forwardText.text = InputManager.Instance.GetBindingText(InputManager.Binding.Move_Up);

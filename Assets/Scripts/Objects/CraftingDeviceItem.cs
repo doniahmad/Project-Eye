@@ -8,8 +8,24 @@ public class CraftingDeviceItem : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        craftingUI.Show();
-        craftingUI.SetPlayerControl(player);
-        player.DisableControl();
+        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty || player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
+        {
+            craftingUI.Show();
+            craftingUI.SetPlayerControl(player);
+            player.DisableControl();
+        }
+    }
+
+    public void ResetMaterial()
+    {
+        Material[] emptyMaterials = new Material[0];
+        foreach (MeshRenderer slot in slotMeshRenderer)
+        {
+            slot.materials = emptyMaterials;
+        }
+        if (craftedMeshRenderer.materials != null)
+        {
+            craftedMeshRenderer.materials = emptyMaterials;
+        }
     }
 }

@@ -15,6 +15,9 @@ MonoBehaviour:
   isOneTimeEvent: 1
   isComplete: 0
   taskName: Baca Buku
+  dialogue:
+    dialogueLines:
+    - line: Aku harus membaca buku terlebih dahulu
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}

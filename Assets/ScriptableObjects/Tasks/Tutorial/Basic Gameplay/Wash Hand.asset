@@ -15,6 +15,9 @@ MonoBehaviour:
   isOneTimeEvent: 0
   isComplete: 0
   taskName: Cuci Tangan di Wastafel
+  dialogue:
+    dialogueLines:
+    - line: Sebelum memulai pembuatan aku harus mencuci tangan agar steril.
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}

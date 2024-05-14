@@ -15,6 +15,7 @@ MonoBehaviour:
   isOneTimeEvent: 0
   isComplete: 0
   taskName: Dapatkan 2 Potion A
+  dialogue: 
   taskCategory: 0
   itemsToGather:
   - {fileID: 11400000, guid: 5132bf434f4afba4f852ee1597c76d2b, type: 2}

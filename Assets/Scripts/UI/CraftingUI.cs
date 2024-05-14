@@ -46,12 +46,52 @@ public class CraftingUI : MonoBehaviour
         playerInventory.OnItemRemoved += PlayerInventory_OnItemRemoved;
         CraftingMinigame.OnSuccessCrafting += CraftingMinigame_OnSuccessCrafting;
         CraftingMinigame.OnFailedCrafting += CraftingMinigame_OnFailedCrafting;
+<<<<<<< Updated upstream
+=======
+        ItemRecipeManager.Instance.OnRecipeFound += ItemRecipeManager_OnItemFound;
+        ItemRecipeManager.Instance.OnRecipeNotFound += ItemRecipeManager_OnItemNotFound;
+
+        OnCraftingSlotChanged += CraftingUI_OnCraftingSlotChanged;
+    }
+
+    private void CraftingUI_OnCraftingSlotChanged(object sender, EventArgs e)
+    {
+        for (int i = 0; i < craftingSlot.Count; i++)
+        {
+            if (listItemInCraftingSlot[i].isiMaterial != null)
+            {
+                craftingDevice.slotMeshRenderer[i].material = listItemInCraftingSlot[i].isiMaterial;
+            }
+        }
+    }
+
+    private void ItemRecipeManager_OnItemFound(object sender, EventArgs e)
+    {
+        if (craftedItem.itemObjectSO.isiMaterial != null)
+        {
+            craftingDevice.craftedMeshRenderer.material = craftedItem.itemObjectSO.isiMaterial;
+        }
+    }
+
+    private void ItemRecipeManager_OnItemNotFound(object sender, EventArgs e)
+    {
+        ClearCraftItem();
+        Hide();
+        CraftingMinigame.Instance.ResetCraftingMinigame();
+        craftingDevice.ResetMaterial();
+        Debug.Log("Item Not Found");
+>>>>>>> Stashed changes
     }
 
     private void CraftingMinigame_OnFailedCrafting(object sender, EventArgs e)
     {
         ClearCraftItem();
         Hide();
+<<<<<<< Updated upstream
+=======
+        CraftingMinigame.Instance.ResetCraftingMinigame();
+        craftingDevice.ResetMaterial();
+>>>>>>> Stashed changes
         Debug.Log("Failed Crafting");
         craftingStatus = CraftingStatus.Empty;
     }
@@ -62,7 +102,17 @@ public class CraftingUI : MonoBehaviour
         Hide();
         if (craftedItem != null && craftedItem.itemObjectSO.prefab != null)
         {
+<<<<<<< Updated upstream
             playerInventory.TryStoreItem(craftedItem.itemObjectSO);
+=======
+            if (playerInventory.TryStoreItem(craftedItem.itemObjectSO))
+            {
+                ClearCraftItem();
+                Hide();
+                CraftingMinigame.Instance.ResetCraftingMinigame();
+                craftingDevice.ResetMaterial();
+            }
+>>>>>>> Stashed changes
         }
         craftingStatus = CraftingStatus.Crafted;
         Debug.Log("Success Crafting " + craftedItem.itemObjectSO.objectName);

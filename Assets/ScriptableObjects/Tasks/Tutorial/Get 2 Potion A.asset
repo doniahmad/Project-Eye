@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isComplete: 0
   taskName: Get Potion A
-  taskUncheckedIcon: {fileID: 21300000, guid: 5cee40fb9b4e0e64a9952abc643ead64, type: 3}
-  taskCheckedIcon: {fileID: 21300000, guid: 5cee40fb9b4e0e64a9952abc643ead64, type: 3}
+  dialogue:
+    dialogueLines:
+    - line: Semuanya sudah siap, saatnya mencari Ramuan A.
   listSubtasks:
   - {fileID: 11400000, guid: 5a8b6babf99764241bb14cfe8fbc8580, type: 2}
   - {fileID: 11400000, guid: 04221c0e3bce0804aaa4934f6c675b7b, type: 2}

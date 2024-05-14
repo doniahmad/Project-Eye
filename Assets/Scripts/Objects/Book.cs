@@ -15,7 +15,6 @@ public class Book : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        Debug.Log(player.GetPlayerStatus());
         if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty || player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
         {
             player.SetPlayerStatus(PlayerStatus.Status.AfterReadBook);
@@ -24,5 +23,6 @@ public class Book : BaseItem
         {
             Debug.Log("Not Able to Read Book");
         }
+        Debug.Log(player.GetPlayerStatus());
     }
 }

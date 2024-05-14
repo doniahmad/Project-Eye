@@ -16,7 +16,6 @@ public class TaskUI : MonoBehaviour
     public void SetTask(TaskSO taskSO)
     {
         taskTitle.text = taskSO.taskName;
-        taskIcon.sprite = taskSO.taskUncheckedIcon;
     }
 
     public void SetComplete()
@@ -43,9 +42,12 @@ public class TaskUI : MonoBehaviour
 
     public void ClearSubtask()
     {
-        while (subtaskContainer.childCount > 0)
+        for (int i = 0; i < subtaskContainer.childCount; i++)
         {
-            DestroyImmediate(subtaskContainer.GetChild(0).gameObject);
+            if (subtaskContainer.GetChild(i).gameObject != null)
+            {
+                Destroy(subtaskContainer.GetChild(i).gameObject);
+            }
         }
     }
 

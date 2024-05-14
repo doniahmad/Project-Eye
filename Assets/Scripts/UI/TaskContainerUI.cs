@@ -65,7 +65,6 @@ public class TaskContainerUI : MonoBehaviour
     public void ShowTask()
     {
         taskUI.taskTitle.text = taskSO.taskName;
-        taskUI.taskIcon.sprite = taskSO.taskUncheckedIcon;
     }
 
     public void ShowTaskContainer()
@@ -76,5 +75,11 @@ public class TaskContainerUI : MonoBehaviour
     public void HideTaskContainer()
     {
         taskContainer.gameObject.SetActive(false);
+    }
+
+    public void SetComplete()
+    {
+        ClearTask();
+        HideTaskContainer();
     }
 }
