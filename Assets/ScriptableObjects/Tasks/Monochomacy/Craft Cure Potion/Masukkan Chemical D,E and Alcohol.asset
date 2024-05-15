@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e54db8f8fe17f640bde85e9d6fe5fd5, type: 3}
+  m_Name: Masukkan Chemical D,E and Alcohol
+  m_EditorClassIdentifier: 
+  isOneTimeEvent: 0
+  isComplete: 0
+  taskName: Masukkan Bahan - Bahan
+  dialogue:
+    dialogueLines:
+    - line: Aku harus memasukkan bahan - bahan yang diperlukan.
+  taskCategory: 2
+  itemsToGather: []
+  itemToCraft: {fileID: 0}
+  itemToInsert:
+  - {fileID: 11400000, guid: 399967a37fffc214fb6330331d55b7ef, type: 2}
+  - {fileID: 11400000, guid: 7ebec09535f2bf443b1b376771162d3e, type: 2}
+  - {fileID: 11400000, guid: df79b648c1df4a64f9aa53d2e4160399, type: 2}
+  problem: 0

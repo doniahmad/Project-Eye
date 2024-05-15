@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
 
+    public VisualEffectManager visualEffectManager;
     private InputManager playerInput;
     private PlayerInteract playerInteract;
     private PlayerInventory playerInventory;
@@ -70,5 +71,36 @@ public class PlayerController : MonoBehaviour
     public void SetPlayerStatus(PlayerStatus.Status status)
     {
         playerStatus.status = status;
+    }
+
+    public void StartGameplay()
+    {
+        GameManager.Instance.StartGameplay();
+    }
+
+    public void DisableInteraction()
+    {
+        playerInteract.enabled = false;
+        playerInteract.SetSelectedObject(null);
+    }
+
+    public void EnableInteraction()
+    {
+        playerInteract.enabled = true;
+    }
+
+    public void SetHypermetropia()
+    {
+        visualEffectManager.ApplyHypermetropia();
+    }
+
+    public void SetCataract()
+    {
+        visualEffectManager.ApplyCataract();
+    }
+
+    public void SetMonochromacy()
+    {
+        visualEffectManager.ApplyMonochromacy();
     }
 }

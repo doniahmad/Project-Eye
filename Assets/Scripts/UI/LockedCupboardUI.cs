@@ -23,6 +23,7 @@ public class LockedCupboardUI : MonoBehaviour
         {
             button.OnLockedInputButtonClick += LockedCupboardInputButton_OnLockedInputButtonClick;
         }
+        Hide();
     }
 
     private void LockedCupboardInputButton_OnLockedInputButtonClick(object sender, LockedCupboardInputButton.InputButtonEventArgs e)
@@ -76,11 +77,13 @@ public class LockedCupboardUI : MonoBehaviour
         container.SetActive(true);
         player.DisableControl();
         interactUI.onNewDisplay = true;
+
     }
 
     public void Hide()
     {
-        player.EnableControl();
+        if (player != null)
+            player.EnableControl();
         container.SetActive(false);
         interactUI.onNewDisplay = false;
     }

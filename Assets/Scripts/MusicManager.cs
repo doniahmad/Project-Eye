@@ -13,6 +13,7 @@ public class MusicManager : MonoBehaviour
 
     private void Awake()
     {
+
         Instance = this;
         audioSource = GetComponent<AudioSource>();
 

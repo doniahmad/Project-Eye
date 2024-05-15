@@ -50,11 +50,27 @@ public class CraftingUI : MonoBehaviour
         CraftingMinigame.OnFailedCrafting += CraftingMinigame_OnFailedCrafting;
         ItemRecipeManager.Instance.OnRecipeFound += ItemRecipeManager_OnItemFound;
         ItemRecipeManager.Instance.OnRecipeNotFound += ItemRecipeManager_OnItemNotFound;
+
+        OnCraftingSlotChanged += CraftingUI_OnCraftingSlotChanged;
+    }
+
+    private void CraftingUI_OnCraftingSlotChanged(object sender, EventArgs e)
+    {
+        for (int i = 0; i < craftingSlot.Count; i++)
+        {
+            if (listItemInCraftingSlot[i].isiMaterial != null)
+            {
+                craftingDevice.slotMeshRenderer[i].material = listItemInCraftingSlot[i].isiMaterial;
+            }
+        }
     }
 
     private void ItemRecipeManager_OnItemFound(object sender, EventArgs e)
     {
-
+        if (craftedItem.itemObjectSO.isiMaterial != null)
+        {
+            craftingDevice.craftedMeshRenderer.material = craftedItem.itemObjectSO.isiMaterial;
+        }
     }
 
     private void ItemRecipeManager_OnItemNotFound(object sender, EventArgs e)
@@ -62,6 +78,7 @@ public class CraftingUI : MonoBehaviour
         ClearCraftItem();
         Hide();
         CraftingMinigame.Instance.ResetCraftingMinigame();
+        craftingDevice.ResetMaterial();
         Debug.Log("Item Not Found");
     }
 
@@ -71,6 +88,7 @@ public class CraftingUI : MonoBehaviour
         ClearCraftItem();
         Hide();
         CraftingMinigame.Instance.ResetCraftingMinigame();
+        craftingDevice.ResetMaterial();
         Debug.Log("Failed Crafting");
     }
 
@@ -84,8 +102,10 @@ public class CraftingUI : MonoBehaviour
                 ClearCraftItem();
                 Hide();
                 CraftingMinigame.Instance.ResetCraftingMinigame();
+                craftingDevice.ResetMaterial();
             }
         }
+        craftingStatus = CraftingStatus.Crafted;
     }
 
     private void PlayerInventory_OnItemRemoved(object sender, PlayerInventory.ItemEventArgs e)

@@ -15,8 +15,11 @@ MonoBehaviour:
   isOneTimeEvent: 1
   isComplete: 0
   taskName: Selesaikan Crafting
-  taskCategory: 1
-  itemsToGather: []
-  itemToCraft: {fileID: 11400000, guid: 60b06d7d27569dc43ae9c50cc1154fab, type: 2}
+  dialogue:
+    dialogueLines: []
+  taskCategory: 0
+  itemsToGather:
+  - {fileID: 11400000, guid: 60b06d7d27569dc43ae9c50cc1154fab, type: 2}
+  itemToCraft: {fileID: 0}
   itemToInsert: []
   problem: 0

@@ -12,14 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1380d4c577c552e48a2364f3459ceae4, type: 3}
   m_Name: AudioRefSO
   m_EditorClassIdentifier: 
-  openDoor: []
-  openShelf: []
-  openSlide: []
-  footstep: []
-  drop: []
-  pickup: []
-  glove: []
+  openDoor:
+  - {fileID: 8300000, guid: 5eda333c976771d4e85c6d30cf0721a5, type: 3}
+  openShelf:
+  - {fileID: 8300000, guid: 5eda333c976771d4e85c6d30cf0721a5, type: 3}
+  openSlide:
+  - {fileID: 8300000, guid: 5eda333c976771d4e85c6d30cf0721a5, type: 3}
+  footstep:
+  - {fileID: 8300000, guid: 0299a428e89ffcb47bcc5f88ebb37cb8, type: 3}
+  drop:
+  - {fileID: 8300000, guid: 7c14362a1af18fd47965d8bb44d8f2bd, type: 3}
+  pickup:
+  - {fileID: 8300000, guid: db22f1fbc17176e4cb7b30fcd03fa234, type: 3}
+  glove:
+  - {fileID: 8300000, guid: 75e9a2f97b4c45743808e893759d9239, type: 3}
   trash: []
   notif: []
-  washtafle: []
-  craftingDevice: []
+  washtafle:
+  - {fileID: 8300000, guid: 42405ef5aba215c479267b120a597119, type: 3}
+  craftingDevice:
+  - {fileID: 8300000, guid: b54793e1880a7a74eb301ba30bd788df, type: 3}

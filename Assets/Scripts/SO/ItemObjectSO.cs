@@ -8,5 +8,6 @@ public class ItemObjectSO : ScriptableObject
     public string objectName;
     public Transform prefab;
     public Transform onPlacementPrefab;
+    public Material isiMaterial;
     public Sprite sprite;
 }

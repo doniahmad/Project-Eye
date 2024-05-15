@@ -15,6 +15,9 @@ MonoBehaviour:
   isOneTimeEvent: 1
   isComplete: 0
   taskName: Menulis di papan tulis
+  dialogue:
+    dialogueLines:
+    - line: Sekarang aku sudah tahu, aku harus menulis dipapan tulis.
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}
