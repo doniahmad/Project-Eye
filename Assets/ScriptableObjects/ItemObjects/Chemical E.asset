@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chemical E
   m_EditorClassIdentifier: 
   objectName: Chemical E
-  prefab: {fileID: 654958772627571259, guid: 58f3c27fdc42cfc45942f4adae8e76ab, type: 3}
-  onPlacementPrefab: {fileID: 654958772627571259, guid: 6ad6ff59c57cc3247a5f40e87b4b5925, type: 3}
+  prefab: {fileID: 6527802394894633920, guid: 1c2eeb25e8978bc4db63e244ee904d97, type: 3}
+  onPlacementPrefab: {fileID: 6527802394894633920, guid: 51b6d233db2b8a9499b88102dfc98cf0, type: 3}
+  isiMaterial: {fileID: 2100000, guid: 290f49e4b29a2db4baf057adcbf19963, type: 2}
   sprite: {fileID: 21300000, guid: 877dd0422114fa14b824afed10fd15cc, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb1050dd0b729841af60437f3caa56b, type: 3}
+  m_Name: Get B & C
+  m_EditorClassIdentifier: 
+  isComplete: 0
+  taskName: Dapatkan Ramuan B dan C
+  dialogue:
+    dialogueLines: []
+  listSubtasks:
+  - {fileID: 11400000, guid: 1ad0742932415ab4eacc9ad5bbd24ec2, type: 2}
+  - {fileID: 11400000, guid: 7baf19a188543a0449b0eae2f5610589, type: 2}
+  - {fileID: 11400000, guid: df6bb7edcc35af846abdccab9b602073, type: 2}

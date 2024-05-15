@@ -20,6 +20,7 @@ public class TaskManager : MonoBehaviour
     public PlayerController player;
     public TaskContainerUI taskContainerUI;
     public CraftingUI craftingUI;
+    public LockedCupboardMinigame lockedCupboardMinigame;
 
     private List<TaskSO> listTaskSO;
     private int currentTaskIndex = 0;
@@ -45,11 +46,15 @@ public class TaskManager : MonoBehaviour
     {
         if (currentTaskIndex < listTaskSO.Count)
         {
+            Debug.Log("Current Task Index: " + currentTaskIndex);
+            Debug.Log("Total Task Count: " + listTaskSO.Count);
             StartNewTask();
         }
         else
         {
-            taskContainerUI.taskUI.SetComplete();
+            taskContainerUI.SetComplete();
+            PhaseManager.Instance.ChangePhase();
+
         }
     }
 
@@ -69,6 +74,7 @@ public class TaskManager : MonoBehaviour
     public void SetListTaskSO(List<TaskSO> listTaskSOs)
     {
         listTaskSO = listTaskSOs;
+        currentTaskIndex = 0;
         StartNewTask();
     }
 
@@ -86,6 +92,32 @@ public class TaskManager : MonoBehaviour
     {
         currentSubtaskIndex = 0;
         currentTaskSO = task;
+        if (DialogueManager.Instance.isDialogueActive == false)
+        {
+            if (currentTaskSO.dialogue != null)
+            {
+                StartCoroutine(StartDialogueAndLoadTask(currentTaskSO));
+            }
+            else
+            {
+                listSubtaskSO = task.listSubtasks;
+                listSubtasks = new List<SubTaskUI>();
+                taskContainerUI.ClearTask();
+                taskContainerUI.SetTaskSO(currentTaskSO);
+                LoadNewSubtask();
+            }
+        }
+    }
+
+    IEnumerator StartDialogueAndLoadTask(TaskSO task)
+    {
+        DialogueManager.Instance.StartDialogue(task.dialogue);
+
+        while (DialogueManager.Instance.isDialogueActive)
+        {
+            yield return null;
+        }
+
         listSubtaskSO = task.listSubtasks;
         listSubtasks = new List<SubTaskUI>();
         taskContainerUI.ClearTask();
@@ -95,21 +127,44 @@ public class TaskManager : MonoBehaviour
 
     private void LoadNewSubtask()
     {
-        if (currentSubtaskIndex < listSubtaskSO.Count)
+        if (DialogueManager.Instance.isDialogueActive == false)
         {
-            currentSubtask = listSubtaskSO[currentSubtaskIndex];
-
-            SubTaskUI newSubtask = taskContainerUI.taskUI.AddNewSubtask(currentSubtask);
-
-            listSubtasks.Add(newSubtask);
-
-            currentSubtaskIndex++;
+            if (currentSubtaskIndex < listSubtaskSO.Count)
+            {
+                currentSubtask = listSubtaskSO[currentSubtaskIndex];
+                if (currentSubtask.dialogue != null)
+                {
+                    StartCoroutine(StartDialogueAndLoadSubTask(currentSubtask));
+                }
+                else
+                {
+                    SubTaskUI newSubtask = taskContainerUI.taskUI.AddNewSubtask(currentSubtask);
+                    listSubtasks.Add(newSubtask);
+                    currentSubtaskIndex++;
+                }
+            }
         }
+    }
+
+    IEnumerator StartDialogueAndLoadSubTask(SubTaskSO subtask)
+    {
+        DialogueManager.Instance.StartDialogue(subtask.dialogue);
+
+        while (DialogueManager.Instance.isDialogueActive)
+        {
+            yield return null;
+        }
+
+        SubTaskUI newSubtask = taskContainerUI.taskUI.AddNewSubtask(subtask);
+
+        listSubtasks.Add(newSubtask);
+
+        currentSubtaskIndex++;
     }
 
     public void HandleTask()
     {
-        Debug.Log(listSubtasks);
+        Debug.Log("handletask");
         if (listSubtasks.Count == listSubtaskSO.Count)
         {
             bool allSubtaskComplete = true;
@@ -124,17 +179,13 @@ public class TaskManager : MonoBehaviour
 
             if (allSubtaskComplete)
             {
-
-
                 OnTaskComplete?.Invoke(this, new TaskEventArgs { taskSO = currentTaskSO });
             }
-
         }
     }
 
     public void CheckSubtask()
     {
-        //     Debug.Log("Cheking Subtask");
         for (int i = 0; i < listSubtasks.Count; i++)
         {
             SubTaskUI subTask = listSubtasks[i];
@@ -145,16 +196,19 @@ public class TaskManager : MonoBehaviour
                 case SubTaskSO.TaskCategory.Gathering:
                     if (HandleGatheringTask(thisSubtaskSO))
                     {
-                        subTask.isComplete = true;
-
-                        OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
-
-                        // Cek apakah subtask saat ini adalah subtask terakhir
-                        if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
+                        if (!subTask.isComplete)
                         {
-                            // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
-                            LoadNewSubtask();
-                            break; // Keluar dari loop setelah memuat subtask baru
+                            subTask.isComplete = true;
+
+                            OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
+
+                            // Cek apakah subtask saat ini adalah subtask terakhir
+                            if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
+                            {
+                                // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
+                                LoadNewSubtask();
+                                break; // Keluar dari loop setelah memuat subtask baru
+                            }
                         }
                     }
                     else
@@ -171,16 +225,19 @@ public class TaskManager : MonoBehaviour
                 case SubTaskSO.TaskCategory.Insert:
                     if (HandleInsertingTask(thisSubtaskSO))
                     {
-                        subTask.isComplete = true;
-
-                        OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
-
-                        // Cek apakah subtask saat ini adalah subtask terakhir
-                        if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
+                        if (!subTask.isComplete)
                         {
-                            // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
-                            LoadNewSubtask();
-                            break; // Keluar dari loop setelah memuat subtask baru
+                            subTask.isComplete = true;
+
+                            OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
+
+                            // Cek apakah subtask saat ini adalah subtask terakhir
+                            if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
+                            {
+                                // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
+                                LoadNewSubtask();
+                                break; // Keluar dari loop setelah memuat subtask baru
+                            }
                         }
                     }
                     else
@@ -191,32 +248,38 @@ public class TaskManager : MonoBehaviour
                 case SubTaskSO.TaskCategory.Crafting:
                     if (HandleCraftingTask(thisSubtaskSO))
                     {
-                        subTask.isComplete = true;
-
-                        OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
-
-                        // Cek apakah subtask saat ini adalah subtask terakhir
-                        if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
+                        if (!subTask.isComplete)
                         {
-                            // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
-                            LoadNewSubtask();
-                            break; // Keluar dari loop setelah memuat subtask baru
+                            subTask.isComplete = true;
+
+                            OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
+
+                            // Cek apakah subtask saat ini adalah subtask terakhir
+                            if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
+                            {
+                                // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
+                                LoadNewSubtask();
+                                break; // Keluar dari loop setelah memuat subtask baru
+                            }
                         }
                     }
                     break;
                 case SubTaskSO.TaskCategory.Solving:
                     if (HandleSolvingTask(thisSubtaskSO))
                     {
-                        subTask.isComplete = true;
-
-                        OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
-
-                        // Cek apakah subtask saat ini adalah subtask terakhir
-                        if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
+                        if (!subTask.isComplete)
                         {
-                            // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
-                            LoadNewSubtask();
-                            break; // Keluar dari loop setelah memuat subtask baru
+                            subTask.isComplete = true;
+
+                            OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
+
+                            // Cek apakah subtask saat ini adalah subtask terakhir
+                            if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
+                            {
+                                // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
+                                LoadNewSubtask();
+                                break; // Keluar dari loop setelah memuat subtask baru
+                            }
                         }
                     }
                     else
@@ -233,6 +296,7 @@ public class TaskManager : MonoBehaviour
 
     private bool CheckItemInCraftingSlot(ItemObjectSO item)
     {
+        Debug.Log("cekincrafting");
         bool itemInserted = false;
         foreach (ItemObjectSO targetItem in craftingUI.GetListItemInCraftingSlot())
         {
@@ -257,39 +321,42 @@ public class TaskManager : MonoBehaviour
     */
     private bool HandleGatheringTask(SubTaskSO task)
     {
-        List<ItemObjectSO> tempListItemInInventorySlot = new List<ItemObjectSO>(storedItemInInventory);
-
-        bool allItemFound = true;
-        foreach (ItemObjectSO item in task.itemsToGather)
+        if (storedItemInInventory != null)
         {
-            bool itemFound = false;
-            foreach (ItemObjectSO targetItem in tempListItemInInventorySlot)
+
+            List<ItemObjectSO> tempListItemInInventorySlot = new List<ItemObjectSO>(storedItemInInventory);
+
+            bool allItemFound = true;
+            foreach (ItemObjectSO item in task.itemsToGather)
             {
-                if (item == targetItem)
+                bool itemFound = false;
+                foreach (ItemObjectSO targetItem in tempListItemInInventorySlot)
                 {
-                    itemFound = true;
-                    tempListItemInInventorySlot.Remove(targetItem);
+                    if (item == targetItem)
+                    {
+                        itemFound = true;
+                        tempListItemInInventorySlot.Remove(targetItem);
+                        break;
+                    }
+                }
+                if (!itemFound)
+                {
+                    allItemFound = false;
                     break;
                 }
             }
-            if (!itemFound)
+
+            if (!allItemFound)
             {
-                allItemFound = false;
-                break;
+                // Debug.Log("Item Not Founded");
+                return false;
             }
-        }
 
-        if (!allItemFound)
-        {
-            // Debug.Log("Item Not Founded");
-            return false;
-        }
-
-        if (allItemFound)
-        {
-            currentTaskSO.isComplete = true;
-            // Debug.Log("Item Founded");
-            return true;
+            if (allItemFound)
+            {
+                // Debug.Log("Item Founded");
+                return true;
+            }
         }
 
         return false;
@@ -332,8 +399,6 @@ public class TaskManager : MonoBehaviour
 
         if (allItemInserted)
         {
-            currentTaskSO.isComplete = true;
-
             Debug.Log("Item Inserted");
             return true;
         }
@@ -343,9 +408,9 @@ public class TaskManager : MonoBehaviour
 
     private bool HandleCraftingTask(SubTaskSO task)
     {
-        if (craftingUI.craftingStatus == CraftingUI.CraftingStatus.Crafted)
+        if (task.itemToCraft == craftingUI.craftedItem.itemObjectSO)
         {
-            if (task.itemToCraft == craftingUI.craftedItem.itemObjectSO)
+            if (craftingUI.craftingStatus == CraftingUI.CraftingStatus.Crafted)
             {
                 return true;
             }
@@ -382,6 +447,10 @@ public class TaskManager : MonoBehaviour
                 }
                 break;
             case SubTaskSO.ProblemCategory.OpenLockedCupboard:
+                if (lockedCupboardMinigame.isOpen == true)
+                {
+                    return true;
+                }
                 break;
             case SubTaskSO.ProblemCategory.FixFumeHoodDoor:
                 break;

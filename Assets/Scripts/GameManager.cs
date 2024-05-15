@@ -7,14 +7,16 @@ public class GameManager : MonoBehaviour
 {
     private event EventHandler OnStateChanged;
 
-    private enum State
+    public enum State
     {
         WaitingToStart,
+        ApplyingPhase,
         GamePlaying,
+        OnPause,
         GameOver,
     }
 
-    public static GameManager Instance { get; private set; }
+    public static GameManager Instance { get; set; }
 
     [Header("Manager")]
     public PlayerController player;
@@ -33,23 +35,66 @@ public class GameManager : MonoBehaviour
     {
         phaseManager = PhaseManager.Instance;
         OnStateChanged += GameManager_OnStateChanged;
-        state = State.GamePlaying;
+        state = State.ApplyingPhase;
         OnStateChanged?.Invoke(this, EventArgs.Empty);
+        phaseManager.OnPhaseChanged += PhaseManager_OnPhaseChanged;
+    }
+
+    private void PhaseManager_OnPhaseChanged(object sender, EventArgs e)
+    {
+        ChangeState(State.ApplyingPhase);
     }
 
     private void GameManager_OnStateChanged(object sender, EventArgs e)
     {
-        ApplyPhase();
+        switch (state)
+        {
+            case State.ApplyingPhase:
+                InputManager.Instance.OnDisable();
+                ApplyPhase();
+                break;
+            case State.GamePlaying:
+                InputManager.Instance.OnEnable();
+                break;
+            case State.OnPause:
+                InputManager.Instance.OnDisable();
+                break;
+            case State.GameOver:
+                InputManager.Instance.OnDisable();
+                break;
+            case State.WaitingToStart:
+                break;
+        }
     }
 
-    private void ApplyPhase()
+    public void ApplyPhase()
     {
         switch (phaseManager.phase)
         {
             case PhaseManager.Phase.Tutorial:
+                // CutsceneManager.Instance.StartCutScene();
                 player.SetPlayerStatus(PlayerStatus.Status.Clean);
                 taskManager.SetListTaskSO(phaseManager.tutorialTask.listTaskSO);
+                StartGameplay();
+                break;
+            case PhaseManager.Phase.PhaseHypermetropia:
+                CutsceneManager.Instance.StartCutScene();
+                player.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
+                WhiteBoard.Instance.SetListTaskSO(phaseManager.hypermetropiaTask);
+                StartGameplay();
                 break;
         }
+    }
+
+    public void ChangeState(State state)
+    {
+        this.state = state;
+        OnStateChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void StartGameplay()
+    {
+        state = State.GamePlaying;
+        OnStateChanged?.Invoke(this, EventArgs.Empty);
     }
 }

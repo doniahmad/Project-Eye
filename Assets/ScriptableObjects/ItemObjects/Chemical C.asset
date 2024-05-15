@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Chemical C
   prefab: {fileID: 6527802394894633920, guid: 93f5d9c146313404694bc261e2768085, type: 3}
   onPlacementPrefab: {fileID: 6527802394894633920, guid: eb19fa2250e1adc4f97ba953c5b7565e, type: 3}
+  isiMaterial: {fileID: 2100000, guid: afb709b106b4ccc46a76c863ad20ca03, type: 2}
   sprite: {fileID: 21300000, guid: c17aa1c2684812d4484c67d24b24815f, type: 3}

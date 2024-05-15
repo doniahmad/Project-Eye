@@ -13,12 +13,15 @@ public class ItemContainer : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        PlayerInventory playerInventory = player.GetPlayerInventory();
-
-        if (playerInventory.TryStoreItem(GetItemObjectSO()))
+        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty || player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
         {
-            Debug.Log("Success Get " + itemObjectSO.objectName);
-        };
+            PlayerInventory playerInventory = player.GetPlayerInventory();
+
+            if (playerInventory.TryStoreItem(GetItemObjectSO()))
+            {
+                Debug.Log("Success Get " + itemObjectSO.objectName);
+            };
+        }
     }
 
     public Item GetItemObject()

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e54db8f8fe17f640bde85e9d6fe5fd5, type: 3}
+  m_Name: Go To Fumehood
+  m_EditorClassIdentifier: 
+  isOneTimeEvent: 1
+  isComplete: 0
+  taskName: Pergi Ke Ruang Asam
+  dialogue:
+    dialogueLines:
+    - line: Ada sebuah lemari di ruang asam yang berisi Ramuan E.
+  taskCategory: 3
+  itemsToGather: []
+  itemToCraft: {fileID: 0}
+  itemToInsert: []
+  problem: 5
