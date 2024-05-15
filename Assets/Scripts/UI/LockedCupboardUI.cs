@@ -77,6 +77,7 @@ public class LockedCupboardUI : MonoBehaviour
         container.SetActive(true);
         player.DisableControl();
         interactUI.onNewDisplay = true;
+
     }
 
     public void Hide()

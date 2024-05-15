@@ -6,16 +6,9 @@ using UnityEngine.Playables;
 
 public class CutsceneManager : MonoBehaviour
 {
-    public static CutsceneManager Instance { get; set; }
 
     public PlayableDirector tutorialCutscene;
     public PlayableDirector HypermetropiaCutscene;
-
-    private void Awake()
-    {
-        // if (Instance != null)
-        Instance = this;
-    }
 
     // private void Start()
     // {

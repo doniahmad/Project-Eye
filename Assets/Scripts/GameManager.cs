@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [Header("Manager")]
     public PlayerController player;
     public TaskManager taskManager;
+    public CutsceneManager cutsceneManager;
 
     private State state;
     private PhaseManager phaseManager;
@@ -78,7 +79,7 @@ public class GameManager : MonoBehaviour
                 StartGameplay();
                 break;
             case PhaseManager.Phase.PhaseHypermetropia:
-                CutsceneManager.Instance.StartCutScene();
+                cutsceneManager.StartCutScene();
                 player.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
                 WhiteBoard.Instance.SetListTaskSO(phaseManager.hypermetropiaTask);
                 StartGameplay();

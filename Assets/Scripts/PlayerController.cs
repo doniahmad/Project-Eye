@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
 
+    public VisualEffectManager visualEffectManager;
     private InputManager playerInput;
     private PlayerInteract playerInteract;
     private PlayerInventory playerInventory;
@@ -90,16 +91,16 @@ public class PlayerController : MonoBehaviour
 
     public void SetHypermetropia()
     {
-        VisualEffectManager.Instance.ApplyHypermetropia();
+        visualEffectManager.ApplyHypermetropia();
     }
 
     public void SetCataract()
     {
-        VisualEffectManager.Instance.ApplyCataract();
+        visualEffectManager.ApplyCataract();
     }
 
     public void SetMonochromacy()
     {
-        VisualEffectManager.Instance.ApplyMonochromacy();
+        visualEffectManager.ApplyMonochromacy();
     }
 }

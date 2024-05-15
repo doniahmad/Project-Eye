@@ -106,7 +106,6 @@ public class CraftingUI : MonoBehaviour
             }
         }
         craftingStatus = CraftingStatus.Crafted;
-        Debug.Log("Success Crafting " + craftedItem.itemObjectSO.objectName);
     }
 
     private void PlayerInventory_OnItemRemoved(object sender, PlayerInventory.ItemEventArgs e)

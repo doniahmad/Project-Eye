@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Failure Item
   prefab: {fileID: 6527802394894633920, guid: 40d0dadfbff11cb479a402036ebe4099, type: 3}
   onPlacementPrefab: {fileID: 6527802394894633920, guid: 0f85ad35debfdd9459b3331acd3a55db, type: 3}
+  isiMaterial: {fileID: 2100000, guid: 323cadd43486e2c40ae938df5e1413c0, type: 2}
   sprite: {fileID: 21300000, guid: ae7915d63b13e4f4291d53ad50c99f55, type: 3}
