@@ -54,7 +54,8 @@ public class TaskManager : MonoBehaviour
         {
             taskContainerUI.SetComplete();
             PhaseManager.Instance.ChangePhase();
-
+            listTaskSO.Clear();
+            listSubtaskSO.Clear();
         }
     }
 
@@ -213,13 +214,18 @@ public class TaskManager : MonoBehaviour
                     }
                     else
                     {
-                        foreach (ItemObjectSO item in subTask.subTaskSO.itemsToGather)
+                        foreach (ItemObjectSO item in thisSubtaskSO.itemsToGather)
                         {
-                            if (!CheckItemInCraftingSlot(item))
+                            if (CheckItemInCraftingSlot(item) == false)
                             {
                                 subTask.isComplete = false;
                             }
+                            else
+                            {
+                                subTask.isComplete = true;
+                            }
                         }
+
                     }
                     break;
                 case SubTaskSO.TaskCategory.Insert:
@@ -296,20 +302,12 @@ public class TaskManager : MonoBehaviour
 
     private bool CheckItemInCraftingSlot(ItemObjectSO item)
     {
-        Debug.Log("cekincrafting");
-        bool itemInserted = false;
         foreach (ItemObjectSO targetItem in craftingUI.GetListItemInCraftingSlot())
         {
             if (item == targetItem)
             {
-                itemInserted = true;
                 return true;
             }
-        }
-
-        if (!itemInserted)
-        {
-            return false;
         }
 
         return false;
