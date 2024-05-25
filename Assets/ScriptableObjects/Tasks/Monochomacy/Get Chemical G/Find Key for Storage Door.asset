@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOneTimeEvent: 1
   isComplete: 0
-  taskName: 
+  taskName: Cari Kunci untuk Gudang
   dialogue:
-    dialogueLines:
-    - line: Ini terkunci, Aku sepertinya menaruh kuncinya di sebuah laci.
+    dialogueLines: []
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}
   itemToInsert: []
-  problem: 7
+  problem: 8

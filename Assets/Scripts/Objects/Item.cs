@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : BaseItem
 {
+    public static event EventHandler OnActionTakeItem;
+
     [SerializeField] private ItemObjectSO itemObjectSO;
     public MeshRenderer itemMaterial;
 
@@ -25,6 +28,7 @@ public class Item : BaseItem
             if (playerInventory.TryStoreItem(GetItemObjectSO()) == true)
             {
                 DestroySelf();
+                OnActionTakeItem?.Invoke(this, EventArgs.Empty);
             }
         }
     }

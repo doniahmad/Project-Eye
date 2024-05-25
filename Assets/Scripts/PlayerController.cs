@@ -53,6 +53,16 @@ public class PlayerController : MonoBehaviour
         return playerAnimation;
     }
 
+    public void DisableMotion()
+    {
+        playerInput.StopMotion();
+    }
+
+    public void EnableMotion()
+    {
+        playerInput.StartMotion();
+    }
+
     public void DisableControl()
     {
         playerInput.OnDisable();

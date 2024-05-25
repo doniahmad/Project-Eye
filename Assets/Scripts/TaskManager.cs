@@ -21,6 +21,9 @@ public class TaskManager : MonoBehaviour
     public TaskContainerUI taskContainerUI;
     public CraftingUI craftingUI;
     public LockedCupboardMinigame lockedCupboardMinigame;
+    public FumeCupboard fumeCupboard;
+    public Door storageDoor;
+    public FumehoodTriggerEnter fumehoodTriggerEnter;
 
     private List<TaskSO> listTaskSO;
     private int currentTaskIndex = 0;
@@ -54,8 +57,8 @@ public class TaskManager : MonoBehaviour
         {
             taskContainerUI.SetComplete();
             PhaseManager.Instance.ChangePhase();
-            listTaskSO.Clear();
-            listSubtaskSO.Clear();
+            // listTaskSO.Clear();
+            // listSubtaskSO.Clear();
         }
     }
 
@@ -74,18 +77,25 @@ public class TaskManager : MonoBehaviour
 
     public void SetListTaskSO(List<TaskSO> listTaskSOs)
     {
-        listTaskSO = listTaskSOs;
-        currentTaskIndex = 0;
-        StartNewTask();
+        if (listTaskSOs != null)
+        {
+            listTaskSO = listTaskSOs;
+            currentTaskIndex = 0;
+            StartNewTask();
+
+        }
     }
 
     public void StartNewTask()
     {
-        currentTaskSO = listTaskSO[currentTaskIndex];
+        if (listTaskSO != null)
+        {
+            currentTaskSO = listTaskSO[currentTaskIndex];
 
-        LoadTask(currentTaskSO);
+            LoadTask(currentTaskSO);
 
-        currentTaskIndex++;
+            currentTaskIndex++;
+        }
 
     }
 
@@ -451,8 +461,24 @@ public class TaskManager : MonoBehaviour
                 }
                 break;
             case SubTaskSO.ProblemCategory.FixFumeHoodDoor:
+                if (fumeCupboard.isSolved == true)
+                {
+                    return true;
+                }
                 break;
             case SubTaskSO.ProblemCategory.OpenWerehouse:
+                if (storageDoor.doorOpened == true)
+                {
+                    return true;
+                }
+                break;
+            case SubTaskSO.ProblemCategory.GoToFumehood:
+                if (fumehoodTriggerEnter.isFirstTimeEnter == true)
+                {
+                    return true;
+                }
+                break;
+            case SubTaskSO.ProblemCategory.FindRedKey:
                 break;
         }
         return false;

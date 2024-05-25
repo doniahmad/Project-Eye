@@ -8,6 +8,7 @@ TagManager:
   - CraftingMachine
   - ItemSlot
   - AlcoholSlot
+  - bautSlot
   layers:
   - Default
   - TransparentFX

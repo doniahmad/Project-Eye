@@ -46,4 +46,9 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    public void ClearItems()
+    {
+        itemUI.Clear();
+    }
+
 }

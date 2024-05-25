@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e54db8f8fe17f640bde85e9d6fe5fd5, type: 3}
   m_Name: Masukkan Chemical D,E and Alcohol
   m_EditorClassIdentifier: 
-  isOneTimeEvent: 0
+  isOneTimeEvent: 1
   isComplete: 0
   taskName: Masukkan Bahan - Bahan
   dialogue:

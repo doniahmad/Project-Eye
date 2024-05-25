@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Lemari Bawah 1
-    second: {fileID: 2100000, guid: 6e72645d60e498b42bf8f7e83d018b59, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Rak Interact
-    second: {fileID: 2100000, guid: f2cab53559f22f448a38c3d1dfcbb4d5, type: 2}
+    second: {fileID: 2100000, guid: 4ab55958811bed044a76f5e579dfa051, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ListMonocromacy
   m_EditorClassIdentifier: 
   isComplete: 0
-  PhaseTask: 
+  PhaseTask: Monocromacy
   listTaskSO:
   - {fileID: 11400000, guid: bb226c2693462154b854481a6ca0b96b, type: 2}
   - {fileID: 11400000, guid: 7976ed08e675d1a4ba63cd34754c8487, type: 2}

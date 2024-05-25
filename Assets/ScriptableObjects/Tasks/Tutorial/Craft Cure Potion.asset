@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1050dd0b729841af60437f3caa56b, type: 3}
   m_Name: Craft Cure Potion
   m_EditorClassIdentifier: 
-  isComplete: 1
+  isComplete: 0
   taskName: Campurkan Item Yang Sudah didapatkan
   dialogue:
     dialogueLines: []

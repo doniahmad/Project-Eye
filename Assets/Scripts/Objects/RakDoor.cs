@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RakDoor : BaseItem
 {
+    public static event EventHandler OnActionRakDoor;
+
     [SerializeField] private float openAngle;
     [SerializeField] private float rotationSpeed = 2f;
 
@@ -39,6 +42,7 @@ public class RakDoor : BaseItem
             isOpening = true;
             InteractCommand = "Close Rak";
             StartCoroutine(AnimateDoor(targetRotation));
+            OnActionRakDoor?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -49,6 +53,7 @@ public class RakDoor : BaseItem
             isOpening = false;
             InteractCommand = "Open Rak";
             StartCoroutine(AnimateDoor(initialRotation));
+            OnActionRakDoor?.Invoke(this, EventArgs.Empty);
         }
     }
 

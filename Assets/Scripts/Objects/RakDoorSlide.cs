@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RakDoorSlide : BaseItem
 {
+    public static event EventHandler OnActionRakDoorSlide;
+
     [SerializeField] private float openRadius;
     [SerializeField] private float openSpeed = 2f;
 
@@ -22,6 +25,7 @@ public class RakDoorSlide : BaseItem
 
     public override void Interact(PlayerController player)
     {
+        OnActionRakDoorSlide?.Invoke(this, EventArgs.Empty);
         if (!isOpening)
         {
             OpenDoor();

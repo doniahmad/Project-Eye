@@ -12,6 +12,7 @@ public class ItemDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
     private CanvasGroup canvasGroup;
     private ItemUI itemUI;
     private bool isDraggable;
+    private Vector2 initialOffset;
 
     private void Start()
     {
@@ -35,7 +36,8 @@ public class ItemDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
         if (!isDraggable) return;
 
         startPos = rectTransform.anchoredPosition;
-        rectTransform.localScale = new Vector2(0.5f, 0.5f);
+        initialOffset = (rectTransform.rect.center - eventData.position) / canvas.scaleFactor;
+        rectTransform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = false;
@@ -45,8 +47,8 @@ public class ItemDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
     public void OnDrag(PointerEventData eventData)
     {
         if (!isDraggable) return;
-        // Update position item
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        Vector2 newPosition = eventData.position + initialOffset * canvas.scaleFactor;
+        rectTransform.anchoredPosition = newPosition;
     }
 
     // On Drag Event End
@@ -58,7 +60,7 @@ public class ItemDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDrag
             rectTransform.anchoredPosition = startPos;
         }
 
-        rectTransform.localScale = Vector2.one;
+        rectTransform.localScale = Vector3.one;
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
     }

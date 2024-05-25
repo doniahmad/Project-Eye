@@ -17,18 +17,19 @@ MonoBehaviour:
   openShelf:
   - {fileID: 8300000, guid: 5eda333c976771d4e85c6d30cf0721a5, type: 3}
   openSlide:
-  - {fileID: 8300000, guid: 5eda333c976771d4e85c6d30cf0721a5, type: 3}
+  - {fileID: 8300000, guid: e23d7a14cbabc5545a15a4c40e3e44d4, type: 3}
   footstep:
-  - {fileID: 8300000, guid: 0299a428e89ffcb47bcc5f88ebb37cb8, type: 3}
+  - {fileID: 8300000, guid: 078e15982fce2e147bf06c8a7682f28b, type: 3}
+  - {fileID: 8300000, guid: b2d2893ac04fbdb44a226f4b6ea0d271, type: 3}
   drop:
-  - {fileID: 8300000, guid: 7c14362a1af18fd47965d8bb44d8f2bd, type: 3}
+  - {fileID: 8300000, guid: 77b0de2d9d3169e4da1ee502b411cc73, type: 3}
   pickup:
-  - {fileID: 8300000, guid: db22f1fbc17176e4cb7b30fcd03fa234, type: 3}
+  - {fileID: 8300000, guid: b52f1b52d082e2049ba2375ab14ec420, type: 3}
   glove:
   - {fileID: 8300000, guid: 75e9a2f97b4c45743808e893759d9239, type: 3}
   trash: []
   notif: []
-  washtafle:
-  - {fileID: 8300000, guid: 42405ef5aba215c479267b120a597119, type: 3}
+  washtafel:
+  - {fileID: 8300000, guid: 0518f24f031ade74698550c276295299, type: 3}
   craftingDevice:
   - {fileID: 8300000, guid: b54793e1880a7a74eb301ba30bd788df, type: 3}

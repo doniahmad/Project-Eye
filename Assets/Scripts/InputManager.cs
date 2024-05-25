@@ -96,6 +96,18 @@ public class InputManager : MonoBehaviour
         player.Disable();
     }
 
+    public void StopMotion()
+    {
+        player.Look.Disable();
+        player.Movement.Disable();
+    }
+
+    public void StartMotion()
+    {
+        player.Look.Enable();
+        player.Movement.Enable();
+    }
+
     public string GetBindingText(Binding binding)
     {
         switch (binding)

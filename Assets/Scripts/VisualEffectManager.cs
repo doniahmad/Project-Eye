@@ -14,8 +14,8 @@ public class VisualEffectManager : MonoBehaviour
     [SerializeField] private GameObject cataractUI;
     [SerializeField] private PostProcessProfile defaultProfile;
 
-    BlurPostProcessing blurPostProcessing;
-    ColorBlindness colorBlindness;
+    [SerializeField] private BlurPostProcessing blurPostProcessing;
+    [SerializeField] private ColorBlindness colorBlindness;
 
 
     public bool isColorBlind;
@@ -25,8 +25,8 @@ public class VisualEffectManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        blurPostProcessing = playerCam.GetComponent<BlurPostProcessing>();
-        colorBlindness = playerCam.GetComponent<ColorBlindness>();
+        // blurPostProcessing = playerCam.GetComponent<BlurPostProcessing>();
+        // colorBlindness = playerCam.GetComponent<ColorBlindness>();
 
         ResetEffect();
     }
@@ -79,10 +79,8 @@ public class VisualEffectManager : MonoBehaviour
 
     public void ResetEffect()
     {
-        if (blurPostProcessing != null)
-            blurPostProcessing.enabled = false;
-        if (colorBlindness != null)
-            colorBlindness.enabled = false;
+        blurPostProcessing.blurSize = 0;
+        colorBlindness.severity = 0;
         postProcessVolume.sharedProfile = defaultProfile;
         cataractUI.SetActive(false);
     }
@@ -103,28 +101,24 @@ public class VisualEffectManager : MonoBehaviour
     {
         ResetEffect();
         blurPostProcessing.blurSize = 0.015f;
-        blurPostProcessing.enabled = true;
         cataractUI.SetActive(true);
     }
 
     public void ApplyProtanomaly()
     {
         ResetEffect();
-        colorBlindness.enabled = true;
         colorBlindness.blindType = ColorBlindness.BlindTypes.Protanomaly;
     }
 
     public void ApplyTritanomaly()
     {
         ResetEffect();
-        colorBlindness.enabled = true;
         colorBlindness.blindType = ColorBlindness.BlindTypes.Tritanomaly;
     }
 
     public void ApplyDeuteranomaly()
     {
         ResetEffect();
-        colorBlindness.enabled = true;
         colorBlindness.blindType = ColorBlindness.BlindTypes.Deuteranomaly;
     }
 

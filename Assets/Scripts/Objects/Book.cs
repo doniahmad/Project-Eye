@@ -5,6 +5,7 @@ using UnityEngine;
 public class Book : BaseItem
 {
     public static Book Instance { get; private set; }
+    public BookUI bookUI;
     public bool IsReaded;
 
     private void Start()
@@ -17,12 +18,13 @@ public class Book : BaseItem
     {
         if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty || player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
         {
-            player.SetPlayerStatus(PlayerStatus.Status.AfterReadBook);
+            bookUI.Show();
         }
         else
         {
             Debug.Log("Not Able to Read Book");
         }
-        Debug.Log(player.GetPlayerStatus());
     }
+
+
 }
