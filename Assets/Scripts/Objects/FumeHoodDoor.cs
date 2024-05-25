@@ -34,7 +34,13 @@ public class FumeHoodDoor : BaseItem
         }
         else
         {
-
+            DialogueManager.Instance.StartDialogue(new Dialogue
+            {
+                dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Ada yang rusak dengan pintu ini."},
+                new DialogueLine {line = "Aku harus mengeceknya."},
+            }
+            });
         }
     }
 

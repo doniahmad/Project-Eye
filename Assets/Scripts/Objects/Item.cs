@@ -22,7 +22,7 @@ public class Item : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty || player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
+        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty && player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
         {
             PlayerInventory playerInventory = player.GetPlayerInventory();
             if (playerInventory.TryStoreItem(GetItemObjectSO()) == true)
@@ -30,6 +30,15 @@ public class Item : BaseItem
                 DestroySelf();
                 OnActionTakeItem?.Invoke(this, EventArgs.Empty);
             }
+        }
+        else
+        {
+            DialogueManager.Instance.StartDialogue(new Dialogue
+            {
+                dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Tanganku harus bersih dan memakai sarung tangan untuk mengambilnya."}
+            }
+            });
         }
     }
 

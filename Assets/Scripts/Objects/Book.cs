@@ -16,13 +16,18 @@ public class Book : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty || player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
+        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty && player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
         {
             bookUI.Show();
         }
         else
         {
-            Debug.Log("Not Able to Read Book");
+            DialogueManager.Instance.StartDialogue(new Dialogue
+            {
+                dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Aku masih kotor, aku tidak boleh menyentuh buku ini."}
+                }
+            });
         }
     }
 

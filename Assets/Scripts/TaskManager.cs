@@ -34,6 +34,8 @@ public class TaskManager : MonoBehaviour
     private List<ItemObjectSO> storedItemInInventory;
     private SubTaskSO currentSubtask;
     private int currentSubtaskIndex = 0;
+    private float timeOfProgress;
+    private float maxTimeOfProgess = 100f;
 
     private void Start()
     {
@@ -72,6 +74,13 @@ public class TaskManager : MonoBehaviour
         if (listSubtasks != null)
         {
             CheckSubtask();
+            timeOfProgress += Time.deltaTime;
+            Debug.Log(timeOfProgress);
+            if (timeOfProgress >= maxTimeOfProgess)
+            {
+                DialogueManager.Instance.StartDialogue(currentSubtask.dialogue);
+                timeOfProgress = 0;
+            }
         }
     }
 
@@ -143,6 +152,7 @@ public class TaskManager : MonoBehaviour
             if (currentSubtaskIndex < listSubtaskSO.Count)
             {
                 currentSubtask = listSubtaskSO[currentSubtaskIndex];
+                timeOfProgress = 0;
                 if (currentSubtask.dialogue != null)
                 {
                     StartCoroutine(StartDialogueAndLoadSubTask(currentSubtask));

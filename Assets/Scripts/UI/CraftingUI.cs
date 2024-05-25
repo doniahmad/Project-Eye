@@ -84,7 +84,7 @@ public class CraftingUI : MonoBehaviour
 
     private void CraftingMinigame_OnFailedCrafting(object sender, EventArgs e)
     {
-
+        NotificationUI.Instance.TriggerNotification("Ramuan Gagal");
         ClearCraftItem();
         Hide();
         CraftingMinigame.Instance.ResetCraftingMinigame();
@@ -99,6 +99,7 @@ public class CraftingUI : MonoBehaviour
         {
             if (playerInventory.TryStoreItem(craftedItem.itemObjectSO))
             {
+                NotificationUI.Instance.TriggerNotification("Ramuan Berhasil");
                 ClearCraftItem();
                 Hide();
                 CraftingMinigame.Instance.ResetCraftingMinigame();

@@ -43,6 +43,7 @@ public class FumehoodUI : MonoBehaviour
         {
             Debug.Log("Fumehood Solved");
             fumeCupboard.isSolved = true;
+            NotificationUI.Instance.TriggerNotification("Pintu Diperbaiki");
             fumeCupboard.SetSolved();
             Hide();
         }

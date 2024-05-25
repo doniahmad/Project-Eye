@@ -80,7 +80,7 @@ public class WhiteBoard : BaseItem
         }
         else
         {
-            Debug.Log("Not Able to Use White Board");
+
         }
     }
 
