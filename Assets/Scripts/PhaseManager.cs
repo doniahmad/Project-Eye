@@ -27,7 +27,7 @@ public class PhaseManager : MonoBehaviour
     public ListTaskSOs monochromacyTask;
     public ListTaskSOs blindTask;
 
-    private int currentPhase = 1;
+    public int currentPhase = 1;
 
     private void Awake()
     {

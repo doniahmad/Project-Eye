@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOneTimeEvent: 1
   isComplete: 0
-  taskName: 
+  taskName: Pergi ke gudang
   dialogue:
-    dialogueLines:
-    - line: Aku ingat menyimpannya di dalam gudang penyimpanan.
+    dialogueLines: []
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}
   itemToInsert: []
-  problem: 6
+  problem: 8

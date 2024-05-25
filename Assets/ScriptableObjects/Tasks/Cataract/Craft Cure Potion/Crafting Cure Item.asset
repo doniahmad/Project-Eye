@@ -16,9 +16,11 @@ MonoBehaviour:
   isComplete: 0
   taskName: Selesaikan Crafting
   dialogue:
-    dialogueLines: []
-  taskCategory: 1
-  itemsToGather: []
-  itemToCraft: {fileID: 11400000, guid: 399967a37fffc214fb6330331d55b7ef, type: 2}
+    dialogueLines:
+    - line: Aku harus memasukkan bahan - bahan yang diperlukan.
+  taskCategory: 0
+  itemsToGather:
+  - {fileID: 11400000, guid: 399967a37fffc214fb6330331d55b7ef, type: 2}
+  itemToCraft: {fileID: 0}
   itemToInsert: []
   problem: 0

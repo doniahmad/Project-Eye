@@ -19,12 +19,12 @@ public class ColorBlindness : MonoBehaviour
 
     public bool difference = false;
 
-    private Material colorBlindMat;
+    public Material colorBlindMat;
 
     void Start()
     {
-        colorBlindMat ??= new Material(colorBlindnessShader);
-        colorBlindMat.hideFlags = HideFlags.HideAndDontSave;
+        // colorBlindMat ??= new Material(colorBlindnessShader);
+        // colorBlindMat.hideFlags = HideFlags.HideAndDontSave;
     }
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)

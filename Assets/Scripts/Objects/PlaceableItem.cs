@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class PlaceableItem : BaseItem
 {
+    public static event EventHandler<DropItem> OnActionDropItem;
+    public class DropItem
+    {
+        public Vector3 placementPosition;
+    }
+
     private ItemObjectSO itemObjectSO;
     private Vector3 placementPosition;
     private PlayerInventory playerInventory;
@@ -20,6 +26,7 @@ public class PlaceableItem : BaseItem
             Instantiate(itemObjectSO.prefab, placementPosition, itemObjectSO.prefab.rotation);
             playerInventory.RemoveItem(itemObjectSO);
             player.GetPlayerInteract().SetSelectedObject(null);
+            OnActionDropItem?.Invoke(this, new DropItem { placementPosition = this.placementPosition });
         }
     }
 }

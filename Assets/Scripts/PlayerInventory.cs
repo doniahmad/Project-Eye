@@ -86,6 +86,26 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    public void ClearStorage()
+    {
+        foreach (ItemObjectSO item in listChemicalObjectSOs)
+        {
+            inventoryUI.RemoveItem(item);
+            SetSelectedInventoryItem(null);
+            OnItemRemoved?.Invoke(this, new ItemEventArgs { itemObjectSO = item });
+        }
+
+        listChemicalObjectSOs.Clear();
+
+        SetSelectedInventoryItem(null);
+
+        if (instantiatedObject != null)
+        {
+            Destroy(instantiatedObject.gameObject);
+            instantiatedObject = null;
+        }
+    }
+
     public ItemObjectSO GetSelectedInventoryItem()
     {
         return selectedItem;

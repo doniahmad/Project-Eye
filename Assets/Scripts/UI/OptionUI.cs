@@ -47,12 +47,18 @@ public class OptionUI : MonoBehaviour
         buttonBack.onClick.AddListener(() =>
         {
             Hide();
-            MainMenuManager.Instance.SetSelectedButton(MainMenuManager.Instance.optionButton);
+            if (MainMenuManager.Instance != null)
+            {
+                MainMenuManager.Instance.SetSelectedButton(MainMenuManager.Instance.optionButton);
+            }
         });
-        buttonCredit.onClick.AddListener(() =>
+        if (buttonCredit != null)
         {
-            // open credit ui
-        });
+            buttonCredit.onClick.AddListener(() =>
+            {
+                // open credit ui
+            });
+        }
         // Music setting
         // Decrease Music Volume
         decreaseMusic.onClick.AddListener(() =>
@@ -74,7 +80,7 @@ public class OptionUI : MonoBehaviour
             UpdateVisual();
         });
         // Increase Music Volume
-        decreaseSound.onClick.AddListener(() =>
+        increaseSound.onClick.AddListener(() =>
         {
             SoundManager.Instance.IncreaseVolume();
             UpdateVisual();
@@ -100,9 +106,11 @@ public class OptionUI : MonoBehaviour
     private void UpdateVisual()
     {
         Debug.Log("Music Volume: " + Mathf.Round(MusicManager.Instance.GetVolume() * 100).ToString());
+        Debug.Log("Sound Volume: " + Mathf.Round(SoundManager.Instance.GetVolume() * 100).ToString());
         musicText.text = Mathf.Round(MusicManager.Instance.GetVolume() * 100).ToString();
         soundText.text = Mathf.Round(SoundManager.Instance.GetVolume() * 100).ToString();
         sliderMusic.sizeDelta = new Vector2(Mathf.Round(MusicManager.Instance.GetVolume() * 100 / 100 * maxSliderWidth), sliderMusic.sizeDelta.y);
+        sliderSound.sizeDelta = new Vector2(Mathf.Round(SoundManager.Instance.GetVolume() * 100 / 100 * maxSliderWidth), sliderMusic.sizeDelta.y);
 
         forwardText.text = InputManager.Instance.GetBindingText(InputManager.Binding.Move_Up);
         backwardText.text = InputManager.Instance.GetBindingText(InputManager.Binding.Move_Down);

@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class BlurPostProcessing : MonoBehaviour
 {
-    public Shader blurShader;
-    private Material blurMaterial;
+    public Material blurMaterial;
 
     public enum BlurType
     {
@@ -15,8 +14,8 @@ public class BlurPostProcessing : MonoBehaviour
     public bool useGaussianBlur = false;
     void Start()
     {
-        blurMaterial ??= new Material(blurShader);
-        blurMaterial.hideFlags = HideFlags.HideAndDontSave;
+        // blurMaterial ??= new Material(blurShader);
+        // blurMaterial.hideFlags = HideFlags.HideAndDontSave;
     }
 
     void OnRenderImage(RenderTexture src, RenderTexture dest)

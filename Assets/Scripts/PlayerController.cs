@@ -53,6 +53,16 @@ public class PlayerController : MonoBehaviour
         return playerAnimation;
     }
 
+    public void DisableMotion()
+    {
+        playerInput.StopMotion();
+    }
+
+    public void EnableMotion()
+    {
+        playerInput.StartMotion();
+    }
+
     public void DisableControl()
     {
         playerInput.OnDisable();
@@ -71,6 +81,28 @@ public class PlayerController : MonoBehaviour
     public void SetPlayerStatus(PlayerStatus.Status status)
     {
         playerStatus.status = status;
+        switch (status)
+        {
+            case PlayerStatus.Status.DirtyGloved:
+                NotificationUI.Instance.TriggerNotification("Sarung Tangan Kotor");
+                break;
+            case PlayerStatus.Status.Dirty:
+                NotificationUI.Instance.TriggerNotification("Tangan Kotor");
+                break;
+            case PlayerStatus.Status.CleanGloved:
+                NotificationUI.Instance.TriggerNotification("Sarung Tangan Terpasang");
+                break;
+            case PlayerStatus.Status.Clean:
+                NotificationUI.Instance.TriggerNotification("Tangan Bersih");
+                break;
+            case PlayerStatus.Status.AfterReadBook:
+                NotificationUI.Instance.TriggerNotification("Selesai Membaca");
+                break;
+            case PlayerStatus.Status.AfterWritingRecipe:
+                NotificationUI.Instance.TriggerNotification("Resep Baru Ditemukan");
+                break;
+        }
+
     }
 
     public void StartGameplay()

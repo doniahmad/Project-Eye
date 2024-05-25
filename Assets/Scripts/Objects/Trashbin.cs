@@ -18,7 +18,12 @@ public class Trashbin : BaseItem
         }
         else
         {
-
+            DialogueManager.Instance.StartDialogue(new Dialogue
+            {
+                dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Aku seharusnya tidka menyentuh tempat sampah jika tidak perlu."}
+            }
+            });
         }
     }
 }

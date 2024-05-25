@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1050dd0b729841af60437f3caa56b, type: 3}
   m_Name: Craft Cure Potion
   m_EditorClassIdentifier: 
-  isComplete: 0
+  isComplete: 1
   taskName: Buat Ramuan H
   dialogue:
     dialogueLines: []
   listSubtasks:
-  - {fileID: 11400000, guid: d6f806416bf82e9459cf25eb7e891319, type: 2}
   - {fileID: 11400000, guid: 851045b10f5c3ee48bbfa6e2a50a58f1, type: 2}

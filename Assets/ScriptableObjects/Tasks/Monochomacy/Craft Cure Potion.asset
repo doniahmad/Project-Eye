@@ -17,5 +17,4 @@ MonoBehaviour:
   dialogue:
     dialogueLines: []
   listSubtasks:
-  - {fileID: 11400000, guid: a50a6f18d71ecbc43b5a7e060dc891ad, type: 2}
   - {fileID: 11400000, guid: e14503afac6193b4fa819771c7fc75f2, type: 2}

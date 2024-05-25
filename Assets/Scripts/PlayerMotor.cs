@@ -7,6 +7,9 @@ public class PlayerMotor : MonoBehaviour
     private CharacterController controller;
     private PlayerController playerController;
     private bool onChangePosition;
+    private bool isWalking;
+    private float footstepTimer;
+    public float footstepTimerMax = .7f;
     // private Vector3 playerVelocity;
     // private bool isGrounded;
     public float moveSpeed = 5.0f;
@@ -19,6 +22,19 @@ public class PlayerMotor : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         playerController = GetComponent<PlayerController>();
+    }
+
+    private void Update()
+    {
+        footstepTimer -= Time.deltaTime;
+        if (footstepTimer < 0f)
+        {
+            footstepTimer = footstepTimerMax;
+            if (isWalking == true)
+            {
+                SoundManager.Instance.PlayFootstep(transform.position, 0.8f * SoundManager.Instance.GetVolume());
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -45,10 +61,12 @@ public class PlayerMotor : MonoBehaviour
         if (moveDirection != Vector3.zero)
         {
             playerController.GetPlayerAnimation().StartMoveAnimation();
+            isWalking = true;
         }
         else
         {
             playerController.GetPlayerAnimation().StartIdleAnimation();
+            isWalking = false;
         }
 
         // playerVelocity.y += gravity * Time.deltaTime;

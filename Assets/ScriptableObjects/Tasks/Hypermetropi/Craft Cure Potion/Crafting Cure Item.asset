@@ -17,8 +17,9 @@ MonoBehaviour:
   taskName: Selesaikan Crafting
   dialogue:
     dialogueLines: []
-  taskCategory: 1
-  itemsToGather: []
-  itemToCraft: {fileID: 11400000, guid: cf639b303d1e89542b71cf212b536bca, type: 2}
+  taskCategory: 0
+  itemsToGather:
+  - {fileID: 11400000, guid: cf639b303d1e89542b71cf212b536bca, type: 2}
+  itemToCraft: {fileID: 0}
   itemToInsert: []
   problem: 0

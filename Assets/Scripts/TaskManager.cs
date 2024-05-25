@@ -21,6 +21,9 @@ public class TaskManager : MonoBehaviour
     public TaskContainerUI taskContainerUI;
     public CraftingUI craftingUI;
     public LockedCupboardMinigame lockedCupboardMinigame;
+    public FumeCupboard fumeCupboard;
+    public Door storageDoor;
+    public FumehoodTriggerEnter fumehoodTriggerEnter;
 
     private List<TaskSO> listTaskSO;
     private int currentTaskIndex = 0;
@@ -31,6 +34,8 @@ public class TaskManager : MonoBehaviour
     private List<ItemObjectSO> storedItemInInventory;
     private SubTaskSO currentSubtask;
     private int currentSubtaskIndex = 0;
+    private float timeOfProgress;
+    private float maxTimeOfProgess = 100f;
 
     private void Start()
     {
@@ -54,7 +59,8 @@ public class TaskManager : MonoBehaviour
         {
             taskContainerUI.SetComplete();
             PhaseManager.Instance.ChangePhase();
-
+            // listTaskSO.Clear();
+            // listSubtaskSO.Clear();
         }
     }
 
@@ -68,23 +74,37 @@ public class TaskManager : MonoBehaviour
         if (listSubtasks != null)
         {
             CheckSubtask();
+            timeOfProgress += Time.deltaTime;
+            Debug.Log(timeOfProgress);
+            if (timeOfProgress >= maxTimeOfProgess)
+            {
+                DialogueManager.Instance.StartDialogue(currentSubtask.dialogue);
+                timeOfProgress = 0;
+            }
         }
     }
 
     public void SetListTaskSO(List<TaskSO> listTaskSOs)
     {
-        listTaskSO = listTaskSOs;
-        currentTaskIndex = 0;
-        StartNewTask();
+        if (listTaskSOs != null)
+        {
+            listTaskSO = listTaskSOs;
+            currentTaskIndex = 0;
+            StartNewTask();
+
+        }
     }
 
     public void StartNewTask()
     {
-        currentTaskSO = listTaskSO[currentTaskIndex];
+        if (listTaskSO != null)
+        {
+            currentTaskSO = listTaskSO[currentTaskIndex];
 
-        LoadTask(currentTaskSO);
+            LoadTask(currentTaskSO);
 
-        currentTaskIndex++;
+            currentTaskIndex++;
+        }
 
     }
 
@@ -132,6 +152,7 @@ public class TaskManager : MonoBehaviour
             if (currentSubtaskIndex < listSubtaskSO.Count)
             {
                 currentSubtask = listSubtaskSO[currentSubtaskIndex];
+                timeOfProgress = 0;
                 if (currentSubtask.dialogue != null)
                 {
                     StartCoroutine(StartDialogueAndLoadSubTask(currentSubtask));
@@ -213,13 +234,18 @@ public class TaskManager : MonoBehaviour
                     }
                     else
                     {
-                        foreach (ItemObjectSO item in subTask.subTaskSO.itemsToGather)
+                        foreach (ItemObjectSO item in thisSubtaskSO.itemsToGather)
                         {
-                            if (!CheckItemInCraftingSlot(item))
+                            if (CheckItemInCraftingSlot(item) == false)
                             {
                                 subTask.isComplete = false;
                             }
+                            else
+                            {
+                                subTask.isComplete = true;
+                            }
                         }
+
                     }
                     break;
                 case SubTaskSO.TaskCategory.Insert:
@@ -296,20 +322,12 @@ public class TaskManager : MonoBehaviour
 
     private bool CheckItemInCraftingSlot(ItemObjectSO item)
     {
-        Debug.Log("cekincrafting");
-        bool itemInserted = false;
         foreach (ItemObjectSO targetItem in craftingUI.GetListItemInCraftingSlot())
         {
             if (item == targetItem)
             {
-                itemInserted = true;
                 return true;
             }
-        }
-
-        if (!itemInserted)
-        {
-            return false;
         }
 
         return false;
@@ -453,8 +471,24 @@ public class TaskManager : MonoBehaviour
                 }
                 break;
             case SubTaskSO.ProblemCategory.FixFumeHoodDoor:
+                if (fumeCupboard.isSolved == true)
+                {
+                    return true;
+                }
                 break;
             case SubTaskSO.ProblemCategory.OpenWerehouse:
+                if (storageDoor.doorOpened == true)
+                {
+                    return true;
+                }
+                break;
+            case SubTaskSO.ProblemCategory.GoToFumehood:
+                if (fumehoodTriggerEnter.isFirstTimeEnter == true)
+                {
+                    return true;
+                }
+                break;
+            case SubTaskSO.ProblemCategory.FindRedKey:
                 break;
         }
         return false;

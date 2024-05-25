@@ -17,4 +17,4 @@ MonoBehaviour:
   listTaskSO:
   - {fileID: 11400000, guid: bc381eef764276b49955280d543175e3, type: 2}
   - {fileID: 11400000, guid: 7976ed08e675d1a4ba63cd34754c8487, type: 2}
-  - {fileID: 11400000, guid: ca9ca6860727a2841ac7bfcd6b405c9b, type: 2}
+  - {fileID: 11400000, guid: e987c10bb27f6704b81429c3b2264b97, type: 2}
