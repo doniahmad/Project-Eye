@@ -7,7 +7,7 @@ public class Trashbin : BaseItem
 
     private void Start()
     {
-        InteractCommand = "Trash Glove";
+        InteractCommand = "Buang Sarung Tangan";
     }
 
     public override void Interact(PlayerController player)
@@ -21,7 +21,7 @@ public class Trashbin : BaseItem
             DialogueManager.Instance.StartDialogue(new Dialogue
             {
                 dialogueLines = new List<DialogueLine>{
-                new DialogueLine {line = "Aku seharusnya tidka menyentuh tempat sampah jika tidak perlu."}
+                new DialogueLine {line = "Aku seharusnya tidak menyentuh tempat sampah jika tidak perlu."}
             }
             });
         }

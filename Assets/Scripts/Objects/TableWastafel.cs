@@ -9,12 +9,7 @@ public class TableWastafel : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        if (player.GetPlayerStatus() != PlayerStatus.Status.Clean && player.GetPlayerStatus() != PlayerStatus.Status.CleanGloved)
-        {
-            OnOpenWashtafel?.Invoke(this, EventArgs.Empty);
-            player.SetPlayerStatus(PlayerStatus.Status.Clean);
-        }
-        else if (player.GetPlayerStatus() == PlayerStatus.Status.DirtyGloved)
+        if (player.GetPlayerStatus() == PlayerStatus.Status.DirtyGloved)
         {
             DialogueManager.Instance.StartDialogue(new Dialogue
             {
@@ -22,6 +17,11 @@ public class TableWastafel : BaseItem
                 new DialogueLine {line = "Aku harus membuang sarung tanganku terlebih dahulu"}
             }
             });
+        }
+        else if (player.GetPlayerStatus() != PlayerStatus.Status.Clean && player.GetPlayerStatus() != PlayerStatus.Status.CleanGloved)
+        {
+            OnOpenWashtafel?.Invoke(this, EventArgs.Empty);
+            player.SetPlayerStatus(PlayerStatus.Status.Clean);
         }
         else
         {

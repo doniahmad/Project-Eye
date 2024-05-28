@@ -25,7 +25,7 @@ public class Book : BaseItem
             DialogueManager.Instance.StartDialogue(new Dialogue
             {
                 dialogueLines = new List<DialogueLine>{
-                new DialogueLine {line = "Aku masih kotor, aku tidak boleh menyentuh buku ini."}
+                new DialogueLine {line = "Tanganku masih kotor, sebaiknya aku tidak menyentuh buku ini!"}
                 }
             });
         }

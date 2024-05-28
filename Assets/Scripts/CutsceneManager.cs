@@ -11,6 +11,7 @@ public class CutsceneManager : MonoBehaviour
     public PlayableDirector HypermetropiaCutscene;
     public PlayableDirector CataractCutscene;
     public PlayableDirector MonocromacyCutscene;
+    public PlayableDirector endingCutscene;
 
     // private void Start()
     // {
@@ -36,6 +37,9 @@ public class CutsceneManager : MonoBehaviour
                 break;
             case PhaseManager.Phase.PhaseMonochromacy:
                 MonocromacyCutscene.Play();
+                break;
+            case PhaseManager.Phase.PhaseBlind:
+                endingCutscene.Play();
                 break;
         }
     }

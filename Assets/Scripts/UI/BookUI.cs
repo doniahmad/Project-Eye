@@ -72,6 +72,7 @@ public class BookUI : MonoBehaviour
         babBook = ListBook.Find(e => e.name == babName.ToString());
         page = 0;
         LoadBook();
+        bookBehaviour.IsReaded = false;
     }
 
     private void LoadBook()
@@ -104,12 +105,21 @@ public class BookUI : MonoBehaviour
         {
             PlayerController.Instance.EnableControl();
         }
-        if (readPage >= 3)
+        if (readPage >= 3 && !bookBehaviour.IsReaded)
         {
             bookBehaviour.IsReaded = true;
             if (PlayerController.Instance.GetPlayerStatus() != PlayerStatus.Status.AfterWritingRecipe)
             {
                 PlayerController.Instance.SetPlayerStatus(PlayerStatus.Status.AfterReadBook);
+                if (PhaseManager.Instance.phase != PhaseManager.Phase.Tutorial)
+                {
+                    DialogueManager.Instance.StartDialogue(new Dialogue
+                    {
+                        dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Aku harus menulis resep di papan tulis."}
+            }
+                    });
+                }
             }
         }
         UIManager.Instance.ShowOverlay();
@@ -126,5 +136,10 @@ public class BookUI : MonoBehaviour
         UIManager.Instance.HideOverlay();
         interactUI.onNewDisplay = true;
         container.SetActive(true);
+    }
+
+    public int GetReadedPage()
+    {
+        return readPage;
     }
 }

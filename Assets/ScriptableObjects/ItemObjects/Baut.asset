@@ -16,4 +16,4 @@ MonoBehaviour:
   prefab: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
   onPlacementPrefab: {fileID: 3690455111944766502, guid: d9a58a54b9900b543909ef98ce99ea39, type: 3}
   isiMaterial: {fileID: 0}
-  sprite: {fileID: 21300000, guid: f8564d640df06e14e9c7cd68f70ce4a9, type: 3}
+  sprite: {fileID: 21300000, guid: b65c9556663010841a3b4b088e8703a0, type: 3}

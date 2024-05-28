@@ -108,18 +108,21 @@ public class VisualEffectManager : MonoBehaviour
     {
         ResetEffect();
         colorBlindness.blindType = ColorBlindness.BlindTypes.Protanomaly;
+        colorBlindness.severity = 1;
     }
 
     public void ApplyTritanomaly()
     {
         ResetEffect();
         colorBlindness.blindType = ColorBlindness.BlindTypes.Tritanomaly;
+        colorBlindness.severity = 1;
     }
 
     public void ApplyDeuteranomaly()
     {
         ResetEffect();
         colorBlindness.blindType = ColorBlindness.BlindTypes.Deuteranomaly;
+        colorBlindness.severity = 1;
     }
 
 }

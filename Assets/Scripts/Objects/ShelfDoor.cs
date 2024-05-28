@@ -15,7 +15,7 @@ public class ShelfDoor : BaseItem
     private void Start()
     {
         coll = GetComponent<Collider>();
-        InteractCommand = "Open Shelf";
+        InteractCommand = "Buka Lemari";
         initialPosition = transform.localPosition;
         targetPosition = new Vector3(initialPosition.x, initialPosition.y, openRadius);
     }
@@ -37,7 +37,7 @@ public class ShelfDoor : BaseItem
         if (!isOpening)
         {
             isOpening = true;
-            InteractCommand = "Close Shelf";
+            InteractCommand = "Tutup Lemari";
             StartCoroutine(AnimateDoor(targetPosition));
         }
     }
@@ -47,7 +47,7 @@ public class ShelfDoor : BaseItem
         if (isOpening)
         {
             isOpening = false;
-            InteractCommand = "Open Shelf";
+            InteractCommand = "Buka Lemari";
             StartCoroutine(AnimateDoor(initialPosition));
         }
     }
