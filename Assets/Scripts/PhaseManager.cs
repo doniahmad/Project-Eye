@@ -53,6 +53,9 @@ public class PhaseManager : MonoBehaviour
             case 4:
                 phase = Phase.PhaseMonochromacy;
                 break;
+            case 5:
+                phase = Phase.PhaseBlind;
+                break;
         }
         OnPhaseChanged?.Invoke(this, EventArgs.Empty);
     }

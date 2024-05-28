@@ -105,6 +105,11 @@ public class GameManager : MonoBehaviour
                 StartGameplay();
                 Debug.Log("Applying Monocromacy");
                 break;
+            case PhaseManager.Phase.PhaseBlind:
+                cutsceneManager.StartCutScene();
+                player.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
+                StartGameplay();
+                break;
         }
     }
 

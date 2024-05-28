@@ -75,7 +75,6 @@ public class TaskManager : MonoBehaviour
         {
             CheckSubtask();
             timeOfProgress += Time.deltaTime;
-            Debug.Log(timeOfProgress);
             if (timeOfProgress >= maxTimeOfProgess)
             {
                 DialogueManager.Instance.StartDialogue(currentSubtask.dialogue);
@@ -185,7 +184,6 @@ public class TaskManager : MonoBehaviour
 
     public void HandleTask()
     {
-        Debug.Log("handletask");
         if (listSubtasks.Count == listSubtaskSO.Count)
         {
             bool allSubtaskComplete = true;
@@ -221,11 +219,13 @@ public class TaskManager : MonoBehaviour
                         {
                             subTask.isComplete = true;
 
+
                             OnSubTaskComplete?.Invoke(this, new SubtaskEventArgs { subTaskSO = thisSubtaskSO });
 
                             // Cek apakah subtask saat ini adalah subtask terakhir
                             if (i == listSubtasks.Count - 1 && listSubtasks.Count < listSubtaskSO.Count)
                             {
+                                Debug.Log("Check new subtask");
                                 // Jika iya, dan masih ada subtask yang belum dimuat, maka muat subtask baru
                                 LoadNewSubtask();
                                 break; // Keluar dari loop setelah memuat subtask baru
@@ -234,18 +234,7 @@ public class TaskManager : MonoBehaviour
                     }
                     else
                     {
-                        foreach (ItemObjectSO item in thisSubtaskSO.itemsToGather)
-                        {
-                            if (CheckItemInCraftingSlot(item) == false)
-                            {
-                                subTask.isComplete = false;
-                            }
-                            else
-                            {
-                                subTask.isComplete = true;
-                            }
-                        }
-
+                        subTask.isComplete = false;
                     }
                     break;
                 case SubTaskSO.TaskCategory.Insert:
@@ -342,21 +331,25 @@ public class TaskManager : MonoBehaviour
         if (storedItemInInventory != null)
         {
 
-            List<ItemObjectSO> tempListItemInInventorySlot = new List<ItemObjectSO>(storedItemInInventory);
+            List<ItemObjectSO> tempListItemToGather = new List<ItemObjectSO>(storedItemInInventory.Count + craftingUI.GetListItemInCraftingSlot().Count);
+            tempListItemToGather.AddRange(storedItemInInventory);
+            tempListItemToGather.AddRange(craftingUI.GetListItemInCraftingSlot());
 
             bool allItemFound = true;
+
             foreach (ItemObjectSO item in task.itemsToGather)
             {
                 bool itemFound = false;
-                foreach (ItemObjectSO targetItem in tempListItemInInventorySlot)
+                foreach (ItemObjectSO targetItem in tempListItemToGather)
                 {
                     if (item == targetItem)
                     {
                         itemFound = true;
-                        tempListItemInInventorySlot.Remove(targetItem);
+                        tempListItemToGather.Remove(targetItem);
                         break;
                     }
                 }
+
                 if (!itemFound)
                 {
                     allItemFound = false;
@@ -366,13 +359,11 @@ public class TaskManager : MonoBehaviour
 
             if (!allItemFound)
             {
-                // Debug.Log("Item Not Founded");
                 return false;
             }
 
             if (allItemFound)
             {
-                // Debug.Log("Item Founded");
                 return true;
             }
         }

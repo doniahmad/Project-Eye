@@ -18,7 +18,7 @@ public class RakDoor : BaseItem
     private void Start()
     {
         coll = GetComponent<Collider>();
-        InteractCommand = "Open Rak";
+        InteractCommand = "Buka Rak";
         initialRotation = transform.localRotation;
         targetRotation = Quaternion.Euler(0f, openAngle, 0f) * initialRotation;
     }
@@ -40,7 +40,7 @@ public class RakDoor : BaseItem
         if (!isOpening)
         {
             isOpening = true;
-            InteractCommand = "Close Rak";
+            InteractCommand = "Tutup Rak";
             StartCoroutine(AnimateDoor(targetRotation));
             OnActionRakDoor?.Invoke(this, EventArgs.Empty);
         }
@@ -51,7 +51,7 @@ public class RakDoor : BaseItem
         if (isOpening)
         {
             isOpening = false;
-            InteractCommand = "Open Rak";
+            InteractCommand = "Buka Rak";
             StartCoroutine(AnimateDoor(initialRotation));
             OnActionRakDoor?.Invoke(this, EventArgs.Empty);
         }

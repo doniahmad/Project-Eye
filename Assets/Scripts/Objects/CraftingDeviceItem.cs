@@ -10,11 +10,20 @@ public class CraftingDeviceItem : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty || player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
+        if (player.GetPlayerStatus() != PlayerStatus.Status.Dirty && player.GetPlayerStatus() != PlayerStatus.Status.DirtyGloved)
         {
             craftingUI.Show();
             craftingUI.SetPlayerControl(player);
             player.DisableControl();
+        }
+        else
+        {
+            DialogueManager.Instance.StartDialogue(new Dialogue
+            {
+                dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Tanganku belum steril, Aku harus menggunakan sarung tangan dan bersih!"}
+            }
+            });
         }
     }
 

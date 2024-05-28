@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f0ca4834d38d145bafd216e48accf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractCommand: Take Item
+  InteractCommand: Buka Lemari
   openRadius: -0.7
   openSpeed: 2
 --- !u!1 &8945718786263276602

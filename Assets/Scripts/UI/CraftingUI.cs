@@ -75,11 +75,13 @@ public class CraftingUI : MonoBehaviour
 
     private void ItemRecipeManager_OnItemNotFound(object sender, EventArgs e)
     {
+        NotificationUI.Instance.TriggerNotification("Ramuan Tidak Ditemukan");
         ClearCraftItem();
         Hide();
         CraftingMinigame.Instance.ResetCraftingMinigame();
         craftingDevice.ResetMaterial();
-        Debug.Log("Item Not Found");
+        // playerController.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
+        craftingStatus = CraftingStatus.Empty;
     }
 
     private void CraftingMinigame_OnFailedCrafting(object sender, EventArgs e)
@@ -89,7 +91,8 @@ public class CraftingUI : MonoBehaviour
         Hide();
         CraftingMinigame.Instance.ResetCraftingMinigame();
         craftingDevice.ResetMaterial();
-        Debug.Log("Failed Crafting");
+        // playerController.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
+        craftingStatus = CraftingStatus.Empty;
     }
 
     private void CraftingMinigame_OnSuccessCrafting(object sender, EventArgs e)
@@ -160,7 +163,7 @@ public class CraftingUI : MonoBehaviour
         craftingSlot.Add(itemUI);
         craftingStatus = CraftingStatus.Filled;
 
-        OnCraftingSlotChanged?.Invoke(this, new ListStoredItemEventArgs { listItemInCraftingSlot = listItemInCraftingSlot });
+        StartCoroutine(InvokeWithDelay());
     }
 
     public void RemoveCraftItem(ItemUI itemUI)
@@ -169,6 +172,12 @@ public class CraftingUI : MonoBehaviour
         itemUI.ClearItem();
         craftingSlot.Remove(itemUI);
 
+        StartCoroutine(InvokeWithDelay());
+    }
+
+    private IEnumerator InvokeWithDelay()
+    {
+        yield return new WaitForSeconds(0.2f); // Adjust the delay duration as needed
         OnCraftingSlotChanged?.Invoke(this, new ListStoredItemEventArgs { listItemInCraftingSlot = listItemInCraftingSlot });
     }
 

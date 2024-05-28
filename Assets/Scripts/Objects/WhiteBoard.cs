@@ -10,6 +10,7 @@ public class WhiteBoard : BaseItem
     public TaskManager taskManager;
     private ListTaskSOs listTaskSOs;
     private ListTaskSOs currentTaskSOs;
+    private bool isWrited = false;
 
     [SerializeField] private GameObject TutorialWhiteboardLine;
     [SerializeField] private GameObject HypermetropiaWhiteboardLine;
@@ -42,7 +43,7 @@ public class WhiteBoard : BaseItem
             boardCam.Priority = 0;
             player.EnableMotion();
         }
-        if (player.GetPlayerStatus() == PlayerStatus.Status.AfterReadBook)
+        if (player.GetPlayerStatus() == PlayerStatus.Status.AfterReadBook || Book.Instance.IsReaded)
         {
             switch (PhaseManager.Instance.phase)
             {
@@ -76,7 +77,11 @@ public class WhiteBoard : BaseItem
                 case PhaseManager.Phase.PhaseBlind:
                     break;
             }
-            player.SetPlayerStatus(PlayerStatus.Status.AfterWritingRecipe);
+            if (!isWrited)
+            {
+                player.SetPlayerStatus(PlayerStatus.Status.AfterWritingRecipe);
+                isWrited = true;
+            }
         }
         else
         {
@@ -87,5 +92,6 @@ public class WhiteBoard : BaseItem
     public void SetListTaskSO(ListTaskSOs listTaskSOs)
     {
         this.listTaskSOs = listTaskSOs;
+        isWrited = false;
     }
 }

@@ -14,7 +14,7 @@ public class Door : BaseItem
     {
         if (key != null)
         {
-            InteractCommand = "Use Key";
+            InteractCommand = "Gunakan Kunci";
             doorOpened = false;
         }
     }
@@ -23,36 +23,60 @@ public class Door : BaseItem
     {
         if (key == null)
         {
-            MovePlayer(player);
-            OnActionDoor?.Invoke(this, EventArgs.Empty);
-        }
-        else
-        {
-            if (player.GetPlayerInventory().GetSelectedInventoryItem() == key)
+            if (PhaseManager.Instance.phase != PhaseManager.Phase.Tutorial && PhaseManager.Instance.phase != PhaseManager.Phase.PhaseHypermetropia)
             {
-                player.GetPlayerInventory().RemoveItem(player.GetPlayerInventory().GetSelectedInventoryItem());
-                key = null;
-                doorOpened = true;
-                InteractCommand = "Masuk Gudang";
-                Debug.Log("Pintu terbuka");
-                NotificationUI.Instance.TriggerNotification("Pintu Terbuka");
-            }
-            else if (player.GetPlayerInventory().GetSelectedInventoryItem() != null && player.GetPlayerInventory().GetSelectedInventoryItem() != key)
-            {
-                DialogueManager.Instance.StartDialogue(new Dialogue
-                {
-                    dialogueLines = new List<DialogueLine>{
-                new DialogueLine {line = "Ini bukan kunci yang benar."}
-                }
-                });
+                MovePlayer(player);
+                OnActionDoor?.Invoke(this, EventArgs.Empty);
             }
             else
             {
                 DialogueManager.Instance.StartDialogue(new Dialogue
                 {
                     dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Aku memiliki tugas yang harus dikerjakan."}
+            }
+                });
+            }
+        }
+        else
+        {
+            if (PhaseManager.Instance.phase != PhaseManager.Phase.PhaseCataract && PhaseManager.Instance.phase != PhaseManager.Phase.PhaseHypermetropia && PhaseManager.Instance.phase != PhaseManager.Phase.Tutorial)
+            {
+                if (player.GetPlayerInventory().GetSelectedInventoryItem() == key)
+                {
+                    player.GetPlayerInventory().RemoveItem(player.GetPlayerInventory().GetSelectedInventoryItem());
+                    key = null;
+                    doorOpened = true;
+                    InteractCommand = "Masuk Gudang";
+                    Debug.Log("Pintu terbuka");
+                    NotificationUI.Instance.TriggerNotification("Pintu Terbuka");
+                }
+                else if (player.GetPlayerInventory().GetSelectedInventoryItem() != null && player.GetPlayerInventory().GetSelectedInventoryItem() != key)
+                {
+                    DialogueManager.Instance.StartDialogue(new Dialogue
+                    {
+                        dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Ini bukan kunci yang benar."}
+                }
+                    });
+                }
+                else
+                {
+                    DialogueManager.Instance.StartDialogue(new Dialogue
+                    {
+                        dialogueLines = new List<DialogueLine>{
                 new DialogueLine {line = "Seingatku aku menyimpan kunci di suatu lemari."}
                 }
+                    });
+                }
+            }
+            else
+            {
+                DialogueManager.Instance.StartDialogue(new Dialogue
+                {
+                    dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Aku memiliki tugas yang harus dikerjakan."}
+            }
                 });
             }
         }

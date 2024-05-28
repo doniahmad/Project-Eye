@@ -25,14 +25,26 @@ public class LockedCupboardDoor : BaseItem
 
     public override void Interact(PlayerController player)
     {
-        if (!isOpening)
+        if (PhaseManager.Instance.phase != PhaseManager.Phase.Tutorial)
         {
-            lockedCupboardUI.SetPlayer(player);
-            lockedCupboardUI.Show();
+            if (!isOpening)
+            {
+                lockedCupboardUI.SetPlayer(player);
+                lockedCupboardUI.Show();
+            }
+            else
+            {
+                OnCloseDoor?.Invoke(this, EventArgs.Empty);
+            }
         }
         else
         {
-            OnCloseDoor?.Invoke(this, EventArgs.Empty);
+            DialogueManager.Instance.StartDialogue(new Dialogue
+            {
+                dialogueLines = new List<DialogueLine>{
+                new DialogueLine {line = "Aku memiliki tugas yang harus dikerjakan."}
+            }
+            });
         }
     }
 
@@ -41,7 +53,7 @@ public class LockedCupboardDoor : BaseItem
         if (!isOpening)
         {
             isOpening = true;
-            InteractCommand = "Close Door";
+            InteractCommand = "Tutup Pintu";
             StartCoroutine(AnimateDoor(targetRotation));
         }
     }
@@ -51,7 +63,7 @@ public class LockedCupboardDoor : BaseItem
         if (isOpening)
         {
             isOpening = false;
-            InteractCommand = "Open Door";
+            InteractCommand = "Buka Pintu";
             StartCoroutine(AnimateDoor(initialRotation));
         }
     }

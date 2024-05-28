@@ -24,8 +24,8 @@ public class ItemUI : MonoBehaviour
             itemName.text = itemObjectSO.name;
             itemSprite.sprite = itemObjectSO.sprite;
             itemSprite.color = new Color(255, 255, 255, 100);
-            FitToParent();
             gameObject.SetActive(true);
+            FitToParent();
         }
         else
         {
