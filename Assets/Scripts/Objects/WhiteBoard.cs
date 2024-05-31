@@ -10,7 +10,7 @@ public class WhiteBoard : BaseItem
     public TaskManager taskManager;
     private ListTaskSOs listTaskSOs;
     private ListTaskSOs currentTaskSOs;
-    private bool isWrited = false;
+    public bool isWrited = false;
 
     [SerializeField] private GameObject TutorialWhiteboardLine;
     [SerializeField] private GameObject HypermetropiaWhiteboardLine;
@@ -51,28 +51,24 @@ public class WhiteBoard : BaseItem
                     TutorialWhiteboardLine.SetActive(true);
                     break;
                 case PhaseManager.Phase.PhaseHypermetropia:
-                    if (currentTaskSOs != listTaskSOs)
-                    {
-                        taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
-                        currentTaskSOs = listTaskSOs;
-                        HypermetropiaWhiteboardLine.SetActive(true);
-                    }
+                    // TutorialWhiteboardLine.gameObject.GetComponentInChildren<GameObject>().SetActive(true);
+                    taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
+                    currentTaskSOs = listTaskSOs;
+                    HypermetropiaWhiteboardLine.SetActive(true);
                     break;
                 case PhaseManager.Phase.PhaseCataract:
-                    if (currentTaskSOs != listTaskSOs)
-                    {
-                        taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
-                        currentTaskSOs = listTaskSOs;
-                        CataractWhiteboardLine.SetActive(true);
-                    }
+
+                    taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
+                    currentTaskSOs = listTaskSOs;
+                    CataractWhiteboardLine.SetActive(true);
+
                     break;
                 case PhaseManager.Phase.PhaseMonochromacy:
-                    if (currentTaskSOs != listTaskSOs)
-                    {
-                        taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
-                        currentTaskSOs = listTaskSOs;
-                        MonocromacyWhiteboardLine.SetActive(true);
-                    }
+
+                    taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
+                    currentTaskSOs = listTaskSOs;
+                    MonocromacyWhiteboardLine.SetActive(true);
+
                     break;
                 case PhaseManager.Phase.PhaseBlind:
                     break;
@@ -91,6 +87,7 @@ public class WhiteBoard : BaseItem
 
     public void SetListTaskSO(ListTaskSOs listTaskSOs)
     {
+        Debug.Log("New list on whiteboard");
         this.listTaskSOs = listTaskSOs;
         isWrited = false;
     }

@@ -24,7 +24,7 @@ public class PauseUI : MonoBehaviour
         });
         mainmenuBtn.onClick.AddListener(() =>
         {
-            Loader.Load(Loader.Scene.MainMenuManager);
+            Loader.Load(Loader.Scene.MainMenuScene);
         });
         backBtn.onClick.AddListener(() =>
         {

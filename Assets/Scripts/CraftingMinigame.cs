@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class CraftingMinigame : MonoBehaviour
 {
-    public static event EventHandler OnSuccessCrafting;
-    public static event EventHandler OnFailedCrafting;
+    public event EventHandler OnSuccessCrafting;
+    public event EventHandler OnFailedCrafting;
 
     public static CraftingMinigame Instance { get; private set; }
 

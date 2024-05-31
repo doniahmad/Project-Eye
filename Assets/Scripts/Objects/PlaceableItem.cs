@@ -11,6 +11,11 @@ public class PlaceableItem : BaseItem
         public Vector3 placementPosition;
     }
 
+    public static void ResetStaticData()
+    {
+        OnActionDropItem = null;
+    }
+
     private ItemObjectSO itemObjectSO;
     private Vector3 placementPosition;
     private PlayerInventory playerInventory;
@@ -23,7 +28,8 @@ public class PlaceableItem : BaseItem
 
         if (itemObjectSO != null)
         {
-            Instantiate(itemObjectSO.prefab, placementPosition, itemObjectSO.prefab.rotation);
+            Instantiate(itemObjectSO.prefab, placementPosition, itemObjectSO.onPlacementPrefab.rotation);
+            //Instantiate(itemObjectSO.prefab, placementPosition, itemObjectSO.prefab.rotation);
             playerInventory.RemoveItem(itemObjectSO);
             player.GetPlayerInteract().SetSelectedObject(null);
             OnActionDropItem?.Invoke(this, new DropItem { placementPosition = this.placementPosition });

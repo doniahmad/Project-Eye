@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     public TaskManager taskManager;
     public CutsceneManager cutsceneManager;
+    public WhiteBoard whiteBoard;
 
     private State state;
     private PhaseManager phaseManager;
@@ -38,8 +39,6 @@ public class GameManager : MonoBehaviour
     {
         phaseManager = PhaseManager.Instance;
         OnStateChanged += GameManager_OnStateChanged;
-        // state = State.ApplyingPhase;
-        // OnStateChanged?.Invoke(this, EventArgs.Empty);
         InputManager.Instance.OnPauseAction += InputManager_OnPauseAction;
         phaseManager.OnPhaseChanged += PhaseManager_OnPhaseChanged;
     }
@@ -89,19 +88,19 @@ public class GameManager : MonoBehaviour
             case PhaseManager.Phase.PhaseHypermetropia:
                 cutsceneManager.StartCutScene();
                 player.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
-                WhiteBoard.Instance.SetListTaskSO(phaseManager.hypermetropiaTask);
+                whiteBoard.SetListTaskSO(phaseManager.hypermetropiaTask);
                 StartGameplay();
                 break;
             case PhaseManager.Phase.PhaseCataract:
                 cutsceneManager.StartCutScene();
                 player.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
-                WhiteBoard.Instance.SetListTaskSO(phaseManager.cataractTask);
+                whiteBoard.SetListTaskSO(phaseManager.cataractTask);
                 StartGameplay();
                 break;
             case PhaseManager.Phase.PhaseMonochromacy:
                 cutsceneManager.StartCutScene();
                 player.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
-                WhiteBoard.Instance.SetListTaskSO(phaseManager.monochromacyTask);
+                whiteBoard.SetListTaskSO(phaseManager.monochromacyTask);
                 StartGameplay();
                 Debug.Log("Applying Monocromacy");
                 break;

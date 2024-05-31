@@ -7,6 +7,11 @@ public class GloveBox : BaseItem
 {
     public static event EventHandler OnActionUseGlove;
 
+    public static void ResetStaticData()
+    {
+        OnActionUseGlove = null;
+    }
+
     private void Start()
     {
         InteractCommand = "Use Glove";

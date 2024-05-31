@@ -29,14 +29,17 @@ public class NotificationUI : MonoBehaviour
 
     public void TriggerNotification(string text)
     {
-        if (currentNotificationCoroutine != null)
+        if (notificationAnim != null && notificationText != null)
         {
-            StopCoroutine(currentNotificationCoroutine);
-            StartCoroutine(ForceCloseAndTriggerNewNotification(text));
-        }
-        else
-        {
-            DisplayNotification(text);
+            if (currentNotificationCoroutine != null)
+            {
+                StopCoroutine(currentNotificationCoroutine);
+                StartCoroutine(ForceCloseAndTriggerNewNotification(text));
+            }
+            else
+            {
+                DisplayNotification(text);
+            }
         }
     }
 

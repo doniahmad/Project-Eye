@@ -7,7 +7,7 @@ public class Loader : MonoBehaviour
 {
     public enum Scene
     {
-        MainMenuManager,
+        MainMenuScene,
         LoadingScene,
         LaboratoryScene,
         FumehoodScene,
@@ -18,6 +18,7 @@ public class Loader : MonoBehaviour
 
     public static void Load(Scene targetScene)
     {
+        Time.timeScale = 1f;
         Loader.targetScene = targetScene;
 
         SceneManager.LoadScene(Scene.LoadingScene.ToString());

@@ -7,6 +7,11 @@ public class TableWastafel : BaseItem
 {
     public static event EventHandler OnOpenWashtafel;
 
+    public static void ResetStaticData()
+    {
+        OnOpenWashtafel = null;
+    }
+
     public override void Interact(PlayerController player)
     {
         if (player.GetPlayerStatus() == PlayerStatus.Status.DirtyGloved)
