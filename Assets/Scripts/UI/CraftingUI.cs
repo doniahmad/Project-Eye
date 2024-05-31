@@ -22,6 +22,7 @@ public class CraftingUI : MonoBehaviour
 
     public CraftingStatus craftingStatus;
     public CraftingDeviceItem craftingDevice;
+    public CraftingMinigame craftingMinigame;
     public GameObject container;
     public GameObject craftingMinigameUI;
     [SerializeField] private InteractUI interactUI;
@@ -46,8 +47,8 @@ public class CraftingUI : MonoBehaviour
 
         playerInventory.OnItemStored += PlayerInventory_OnItemStored;
         playerInventory.OnItemRemoved += PlayerInventory_OnItemRemoved;
-        CraftingMinigame.OnSuccessCrafting += CraftingMinigame_OnSuccessCrafting;
-        CraftingMinigame.OnFailedCrafting += CraftingMinigame_OnFailedCrafting;
+        craftingMinigame.OnSuccessCrafting += CraftingMinigame_OnSuccessCrafting;
+        craftingMinigame.OnFailedCrafting += CraftingMinigame_OnFailedCrafting;
         ItemRecipeManager.Instance.OnRecipeFound += ItemRecipeManager_OnItemFound;
         ItemRecipeManager.Instance.OnRecipeNotFound += ItemRecipeManager_OnItemNotFound;
 
@@ -106,7 +107,7 @@ public class CraftingUI : MonoBehaviour
                 ClearCraftItem();
                 Hide();
                 CraftingMinigame.Instance.ResetCraftingMinigame();
-                craftingDevice.ResetMaterial();
+                // craftingDevice.ResetMaterial();
             }
         }
         craftingStatus = CraftingStatus.Crafted;

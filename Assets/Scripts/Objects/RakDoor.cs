@@ -15,6 +15,11 @@ public class RakDoor : BaseItem
     private bool isOpening = false;
     private Collider coll;
 
+    public static void ResetStaticData()
+    {
+        OnActionRakDoor = null;
+    }
+
     private void Start()
     {
         coll = GetComponent<Collider>();

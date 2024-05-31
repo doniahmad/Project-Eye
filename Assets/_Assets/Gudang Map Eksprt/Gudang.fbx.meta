@@ -3,7 +3,62 @@ guid: 7cd5fea8e6418f9409108ab759bfc6ce
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apar Bake
+    second: {fileID: 2100000, guid: 5c237e1c75dee6f47a0c9f42b991acc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Atap Bake
+    second: {fileID: 2100000, guid: fade9ba302e8fdf4195ba89bc8be5c26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lantai Bake
+    second: {fileID: 2100000, guid: 07724b1f2f4d38d4bb4a722bc88b975e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lemari Gudang Bake
+    second: {fileID: 2100000, guid: 848148a2ec820b94dbd6ab866013cd16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: P3K Bake
+    second: {fileID: 2100000, guid: 71952f28bcb04b148898f093ec62fd39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pancuran Bake
+    second: {fileID: 2100000, guid: ea513f3e2b8edcc4d96659674ee6971a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Papan Tulis
+    second: {fileID: 2100000, guid: 24dad69853eccfd4eba9f90eb3d89dfa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pintu
+    second: {fileID: 2100000, guid: 4ab31d9e385f38f40a234b43ad570f74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Troli Bake
+    second: {fileID: 2100000, guid: 2c1168a1b18026b469b801621f1e88f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kaca
+    second: {fileID: 2100000, guid: b879b3e6b0e7bb24c90887f58a4d20a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tembok
+    second: {fileID: 2100000, guid: d6aa23db80fd047489e9d4f0a49baac8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

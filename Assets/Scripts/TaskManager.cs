@@ -17,6 +17,11 @@ public class TaskManager : MonoBehaviour
         public SubTaskSO subTaskSO;
     }
 
+    public static void ResetStaticData()
+    {
+        OnTaskComplete = null;
+    }
+
     public PlayerController player;
     public TaskContainerUI taskContainerUI;
     public CraftingUI craftingUI;

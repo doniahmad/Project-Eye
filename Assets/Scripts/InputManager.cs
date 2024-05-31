@@ -26,8 +26,6 @@ public class InputManager : MonoBehaviour
     public event EventHandler OnInventory2Action;
     public event EventHandler OnPauseAction;
 
-    private PlayerController playerController;
-
     private PlayerInput playerInput;
     private PlayerInput.OnFootActions player;
     // Start is called before the first frame update
@@ -40,8 +38,6 @@ public class InputManager : MonoBehaviour
             playerInput.LoadBindingOverridesFromJson(PlayerPrefs.GetString(PLAYER_PREFS_BINDING));
         }
         player = playerInput.OnFoot;
-
-        playerController = GetComponent<PlayerController>();
 
         player.Enable();
 

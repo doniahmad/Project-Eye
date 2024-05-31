@@ -10,6 +10,11 @@ public class Door : BaseItem
     public Transform targetPos;
     public bool doorOpened = true;
 
+    public static void ResetStaticData()
+    {
+        OnActionDoor = null;
+    }
+
     private void Start()
     {
         if (key != null)

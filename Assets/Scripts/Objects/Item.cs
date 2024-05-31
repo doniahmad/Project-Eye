@@ -10,6 +10,11 @@ public class Item : BaseItem
     [SerializeField] private ItemObjectSO itemObjectSO;
     public MeshRenderer itemMaterial;
 
+    public static void ResetStaticData()
+    {
+        OnActionTakeItem = null;
+    }
+
     public ItemObjectSO GetItemObjectSO()
     {
         return itemObjectSO;
