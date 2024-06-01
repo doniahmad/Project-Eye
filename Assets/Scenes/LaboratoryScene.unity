@@ -2612,6 +2612,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (7)
@@ -2671,6 +2679,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -3323,6 +3335,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (9)
@@ -3382,6 +3402,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -3482,39 +3506,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.983
+      value: 6.693
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.024
+      value: 1.729
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.172
+      value: -4.073
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70105743
+      value: 0.7034969
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.092296
+      value: -0.07136005
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70105743
+      value: 0.7034969
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.092296
+      value: 0.07136005
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -15
+      value: -11.584
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3690455111944766502, guid: 37c6b5342eb9cbf49a3e6e4842a03cc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3749,6 +3773,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (28)
@@ -3808,6 +3840,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -4167,6 +4203,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (20)
@@ -4226,6 +4270,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -4518,6 +4566,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (5)
@@ -4577,6 +4633,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -6082,6 +6142,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (10)
@@ -6141,6 +6209,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -7773,6 +7845,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (11)
@@ -7833,6 +7913,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
     - {fileID: 4932402376752006062, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -7853,6 +7937,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (29)
@@ -7912,6 +8004,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -9800,6 +9896,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (24)
@@ -9859,6 +9963,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -11560,6 +11668,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bf321fd7ca11d54b8d130225256525f, type: 3}
+--- !u!1 &667192373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3384363327580284157, guid: 31ba76109a5b08d429544f17fde02347, type: 3}
+  m_PrefabInstance: {fileID: 2720752974205616581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &667240016
 GameObject:
   m_ObjectHideFlags: 0
@@ -11702,6 +11815,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (14)
@@ -11761,6 +11882,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -12991,6 +13116,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (2)
@@ -13050,6 +13183,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -13158,6 +13295,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (19)
@@ -13217,6 +13362,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -14960,6 +15109,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (17)
@@ -15019,6 +15176,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -15958,6 +16119,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (22)
@@ -16017,6 +16186,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -17425,6 +17598,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (6)
@@ -17484,6 +17665,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -18009,6 +18194,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (23)
@@ -18068,6 +18261,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -18709,6 +18906,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (4)
@@ -18768,6 +18973,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -20062,6 +20271,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (21)
@@ -20121,6 +20338,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -21482,6 +21703,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (16)
@@ -21541,6 +21770,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -22475,6 +22708,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (26)
@@ -22534,6 +22775,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -25423,6 +25668,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (8)
@@ -25482,6 +25735,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -27049,6 +27306,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (15)
@@ -27108,6 +27373,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -28265,6 +28534,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (18)
@@ -28324,6 +28601,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -32022,6 +32303,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (13)
@@ -32081,6 +32370,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -33654,7 +33947,7 @@ GameObject:
   - component: {fileID: 1826892438}
   - component: {fileID: 1826892440}
   - component: {fileID: 1826892439}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chemical G Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34206,6 +34499,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (12)
@@ -34265,6 +34566,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -35078,6 +35383,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G
@@ -35137,6 +35450,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -37627,6 +37944,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (27)
@@ -37686,6 +38011,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -38036,6 +38365,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (1)
@@ -38095,6 +38432,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -38384,6 +38725,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (25)
@@ -38443,6 +38792,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -38709,6 +39062,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1826892438}
     m_Modifications:
+    - target: {fileID: 1084556556182298079, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726573165843698, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5515949313425991050, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_Name
       value: Chem G (3)
@@ -38768,6 +39129,10 @@ PrefabInstance:
     - target: {fileID: 6527802394894633920, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087194077372063555, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6351168864289850425, guid: 67dfff84bc8f7e84cac950d0fa374ddf, type: 3}
@@ -38929,7 +39294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 555017605057415510, guid: 5464c10e7b2744b45b33cc82a1e4c0a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2999998
+      value: 0.30000013
       objectReference: {fileID: 0}
     - target: {fileID: 555017605057415510, guid: 5464c10e7b2744b45b33cc82a1e4c0a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38997,7 +39362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8882548797755141853, guid: 5464c10e7b2744b45b33cc82a1e4c0a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.903
+      value: 7.825
       objectReference: {fileID: 0}
     - target: {fileID: 8882548797755141853, guid: 5464c10e7b2744b45b33cc82a1e4c0a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -39005,7 +39370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8882548797755141853, guid: 5464c10e7b2744b45b33cc82a1e4c0a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.658
+      value: 1.684
       objectReference: {fileID: 0}
     - target: {fileID: 8882548797755141853, guid: 5464c10e7b2744b45b33cc82a1e4c0a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39176,6 +39541,7 @@ GameObject:
   - component: {fileID: 1940946931461824587}
   - component: {fileID: 1309068989123818484}
   - component: {fileID: 8875014294624498845}
+  - component: {fileID: 8875014294624498846}
   m_Layer: 0
   m_Name: Tembok.001
   m_TagString: Untagged
@@ -40214,6 +40580,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6831070717547837333, guid: 31ba76109a5b08d429544f17fde02347, type: 3}
   m_PrefabInstance: {fileID: 2720752974205616581}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &2256572437769478126
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667192373}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8844327080261614728, guid: 6bf78f4df9c023544a416e7e3badcf23, type: 3}
 --- !u!1001 &2295432682327595681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40504,7 +40892,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3384363327580284157, guid: 31ba76109a5b08d429544f17fde02347, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2256572437769478126}
   m_SourcePrefab: {fileID: 100100000, guid: 31ba76109a5b08d429544f17fde02347, type: 3}
 --- !u!1001 &2789613825903640162
 PrefabInstance:
@@ -40626,6 +41017,7 @@ GameObject:
   - component: {fileID: 5661742946832259423}
   - component: {fileID: 3362017200273590558}
   - component: {fileID: 3848715658553659270}
+  - component: {fileID: 5661742946832259424}
   m_Layer: 0
   m_Name: Lantai
   m_TagString: Untagged
@@ -41596,6 +41988,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4460594008201830527}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &5661742946832259424
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080094089711990575}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8570775561417944699, guid: 6bf78f4df9c023544a416e7e3badcf23, type: 3}
 --- !u!33 &5686909466329362432
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42591,6 +43005,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8875014294624498846
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26021947330166710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3751341723620617856, guid: 6bf78f4df9c023544a416e7e3badcf23, type: 3}
 --- !u!4 &8939289203504696179 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4314768382408287196, guid: b7ed74925655da240bba4b6e1ea95cad, type: 3}
