@@ -29,6 +29,20 @@ public class SoundManager : MonoBehaviour
         PlaceableItem.OnActionDropItem += PlaceableItem_OnActionDropItem;
         Item.OnActionTakeItem += Item_OnActionTakeItem;
         GloveBox.OnActionUseGlove += GloveBox_OnActionUseGlove;
+        ShelfDoor.OnActionShelfSlide += ShelfDoor_OnActionShelfSlide;
+        FumeHoodDoor.OnOpenFumeHood += FumeHoodDoor_OnOpenFumeHood;
+    }
+
+    private void FumeHoodDoor_OnOpenFumeHood(object sender, EventArgs e)
+    {
+        FumeHoodDoor fumeHoodDoor = sender as FumeHoodDoor;
+        PlaySound(audioClipRefSO.fumeHood, fumeHoodDoor.transform.position, volume);
+    }
+
+    private void ShelfDoor_OnActionShelfSlide(object sender, EventArgs e)
+    {
+        ShelfDoor shelfDoor = sender as ShelfDoor;
+        PlaySound(audioClipRefSO.openShelf, shelfDoor.transform.position, volume);
     }
 
     private void GloveBox_OnActionUseGlove(object sender, EventArgs e)

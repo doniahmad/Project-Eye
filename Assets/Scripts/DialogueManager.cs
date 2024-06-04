@@ -17,9 +17,6 @@ public class DialogueManager : MonoBehaviour
 
     public float typingSpeed = 0.05f;
 
-    //public Animator animator;
-
-
     void Start()
     {
         if (Instance == null)

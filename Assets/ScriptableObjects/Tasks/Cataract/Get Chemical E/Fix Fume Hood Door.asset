@@ -18,6 +18,9 @@ MonoBehaviour:
   dialogue:
     dialogueLines:
     - line: Pintu ini tidak dapat dibuka, Aku harus memperbaikinya.
+    - line: Mesin yang rusak seharusnya ada di samping lemari ini.
+    - line: Sepertinya ada beberapa baut yang lepas.
+    - line: Mungkin itu alasannya.
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}

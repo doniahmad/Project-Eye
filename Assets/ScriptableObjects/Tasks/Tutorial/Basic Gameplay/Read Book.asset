@@ -17,7 +17,7 @@ MonoBehaviour:
   taskName: Baca Buku
   dialogue:
     dialogueLines:
-    - line: Aku harus membaca buku terlebih dahulu
+    - line: Pertama - tama, aku harus membaca buku tentang mata.
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}

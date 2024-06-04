@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FumeHoodDoor : BaseItem
 {
+    public static event EventHandler OnOpenFumeHood;
     [SerializeField] private float openRadius;
     [SerializeField] private float openSpeed = 2f;
 
@@ -31,6 +33,8 @@ public class FumeHoodDoor : BaseItem
             {
                 CloseDoor();
             }
+
+            OnOpenFumeHood?.Invoke(this, EventArgs.Empty);
         }
         else
         {

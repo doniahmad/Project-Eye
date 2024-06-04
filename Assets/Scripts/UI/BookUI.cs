@@ -78,6 +78,26 @@ public class BookUI : MonoBehaviour
     private void LoadBook()
     {
         bookRenderer.sprite = babBook.listBook[page];
+
+        if (page == babBook.listBook.Count - 1)
+        {
+            nextButton.interactable = false;
+        }
+        else
+        {
+
+            nextButton.interactable = true;
+        }
+
+        if (page == 0)
+        {
+            prevButton.interactable = false;
+        }
+        else
+        {
+
+            prevButton.interactable = true;
+        }
     }
 
     private void NextPage()

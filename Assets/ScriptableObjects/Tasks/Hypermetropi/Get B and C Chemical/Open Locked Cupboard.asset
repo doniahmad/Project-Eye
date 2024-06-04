@@ -17,7 +17,7 @@ MonoBehaviour:
   taskName: Buka Lemari Terkunci
   dialogue:
     dialogueLines:
-    - line: Aku sepertinya menaruh ramuan itu di lemar yang terkunci.
+    - line: Aku sepertinya menaruh ramuan itu di lemari yang terkunci.
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}

@@ -39,8 +39,15 @@ public class CutsceneManager : MonoBehaviour
                 MonocromacyCutscene.Play();
                 break;
             case PhaseManager.Phase.PhaseBlind:
-                endingCutscene.Play();
+                StartCoroutine(PlayEnding());
                 break;
         }
+    }
+
+    IEnumerator PlayEnding()
+    {
+        endingCutscene.Play();
+        yield return new WaitForSeconds(((float)endingCutscene.duration));
+        Loader.Load(Loader.Scene.MainMenuScene);
     }
 }

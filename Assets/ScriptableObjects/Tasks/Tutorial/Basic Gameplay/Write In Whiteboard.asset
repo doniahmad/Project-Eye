@@ -17,7 +17,8 @@ MonoBehaviour:
   taskName: Menulis di papan tulis
   dialogue:
     dialogueLines:
-    - line: Sekarang aku sudah tahu, aku harus menulis dipapan tulis.
+    - line: Sebelum melakukan sesuatu di lab, sebaiknya aku mencuci tangan terlebih
+        dahulu agar steril.
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}
