@@ -31,6 +31,13 @@ public class SoundManager : MonoBehaviour
         GloveBox.OnActionUseGlove += GloveBox_OnActionUseGlove;
         ShelfDoor.OnActionShelfSlide += ShelfDoor_OnActionShelfSlide;
         FumeHoodDoor.OnOpenFumeHood += FumeHoodDoor_OnOpenFumeHood;
+        LockedCupboardDoor.OnCloseOrOpenDoor += LockedCupboardDoor_OnCloseOrOpenDoor;
+    }
+
+    private void LockedCupboardDoor_OnCloseOrOpenDoor(object sender, EventArgs e)
+    {
+        LockedCupboardDoor lockedCupboardDoor = sender as LockedCupboardDoor;
+        PlaySound(audioClipRefSO.fumeHood, lockedCupboardDoor.transform.position, volume);
     }
 
     private void FumeHoodDoor_OnOpenFumeHood(object sender, EventArgs e)

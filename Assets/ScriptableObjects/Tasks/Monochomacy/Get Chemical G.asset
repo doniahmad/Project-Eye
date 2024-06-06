@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Get Chemical G
   m_EditorClassIdentifier: 
   isComplete: 0
-  taskName: 
+  taskName: Ambil Ramuan G
   dialogue:
     dialogueLines:
     - line: Sekarang aku perlu ramuan G.

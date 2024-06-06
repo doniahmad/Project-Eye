@@ -207,6 +207,7 @@ public class CraftingUI : MonoBehaviour
         UIManager.Instance.ShowOverlay();
         interactUI.onNewDisplay = false;
         container.SetActive(false);
+        GameManager.Instance.HideCursor();
     }
 
     public void Show()
@@ -214,6 +215,7 @@ public class CraftingUI : MonoBehaviour
         UIManager.Instance.HideOverlay();
         container.SetActive(true);
         interactUI.onNewDisplay = true;
+        GameManager.Instance.ShowCursor();
 
     }
 

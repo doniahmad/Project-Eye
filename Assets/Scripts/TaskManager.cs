@@ -74,7 +74,7 @@ public class TaskManager : MonoBehaviour
         HandleTask();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (listSubtasks != null)
         {

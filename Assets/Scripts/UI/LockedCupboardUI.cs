@@ -77,7 +77,7 @@ public class LockedCupboardUI : MonoBehaviour
         container.SetActive(true);
         player.DisableControl();
         interactUI.onNewDisplay = true;
-
+        GameManager.Instance.ShowCursor();
     }
 
     public void Hide()
@@ -86,6 +86,7 @@ public class LockedCupboardUI : MonoBehaviour
             player.EnableControl();
         container.SetActive(false);
         interactUI.onNewDisplay = false;
+        GameManager.Instance.HideCursor();
     }
 
     public void AddInputNumber(int number)

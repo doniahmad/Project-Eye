@@ -10,7 +10,7 @@ public class VideoPlayerTimelineTrigger : MonoBehaviour
 
     private void Start()
     {
-        // UIManager.Instance.HideCamera();
+        Cursor.visible = false;
         videoPlayer.loopPointReached += EndVideoOpening;
     }
 

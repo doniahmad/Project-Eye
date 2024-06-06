@@ -137,7 +137,7 @@ public class BookUI : MonoBehaviour
                     {
                         dialogueLines = new List<DialogueLine>{
                 new DialogueLine {line = "Aku harus menulis resep di papan tulis."}
-            }
+                }
                     });
                 }
             }
@@ -145,6 +145,7 @@ public class BookUI : MonoBehaviour
         UIManager.Instance.ShowOverlay();
         interactUI.onNewDisplay = false;
         container.SetActive(false);
+        GameManager.Instance.HideCursor();
     }
 
     public void Show()
@@ -156,6 +157,7 @@ public class BookUI : MonoBehaviour
         UIManager.Instance.HideOverlay();
         interactUI.onNewDisplay = true;
         container.SetActive(true);
+        GameManager.Instance.ShowCursor();
     }
 
     public int GetReadedPage()

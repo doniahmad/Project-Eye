@@ -6,6 +6,7 @@ using UnityEngine;
 public class LockedCupboardDoor : BaseItem
 {
     public event EventHandler OnCloseDoor;
+    public static EventHandler OnCloseOrOpenDoor;
 
     [SerializeField] private LockedCupboardUI lockedCupboardUI;
     [SerializeField] private float openAngle;
@@ -55,6 +56,7 @@ public class LockedCupboardDoor : BaseItem
             isOpening = true;
             InteractCommand = "Tutup Pintu";
             StartCoroutine(AnimateDoor(targetRotation));
+            OnCloseOrOpenDoor?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -65,6 +67,7 @@ public class LockedCupboardDoor : BaseItem
             isOpening = false;
             InteractCommand = "Buka Pintu";
             StartCoroutine(AnimateDoor(initialRotation));
+            OnCloseOrOpenDoor?.Invoke(this, EventArgs.Empty);
         }
     }
 

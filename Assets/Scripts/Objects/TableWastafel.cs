@@ -6,6 +6,7 @@ using UnityEngine;
 public class TableWastafel : BaseItem
 {
     public static event EventHandler OnOpenWashtafel;
+    public GameObject vfxWaterfall;
 
     public static void ResetStaticData()
     {
@@ -25,6 +26,7 @@ public class TableWastafel : BaseItem
         }
         else if (player.GetPlayerStatus() != PlayerStatus.Status.Clean && player.GetPlayerStatus() != PlayerStatus.Status.CleanGloved)
         {
+            StartCoroutine(StartWaterfall());
             OnOpenWashtafel?.Invoke(this, EventArgs.Empty);
             player.SetPlayerStatus(PlayerStatus.Status.Clean);
         }
@@ -37,5 +39,12 @@ public class TableWastafel : BaseItem
             }
             });
         }
+    }
+
+    IEnumerator StartWaterfall()
+    {
+        vfxWaterfall.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        vfxWaterfall.SetActive(false);
     }
 }

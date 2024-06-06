@@ -28,11 +28,13 @@ MonoBehaviour:
   glove:
   - {fileID: 8300000, guid: 75e9a2f97b4c45743808e893759d9239, type: 3}
   trash:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 76ee73323e25a3042b55adf45a7b774a, type: 3}
   notif: []
   washtafel:
   - {fileID: 8300000, guid: 0518f24f031ade74698550c276295299, type: 3}
   craftingDevice:
   - {fileID: 8300000, guid: b54793e1880a7a74eb301ba30bd788df, type: 3}
   fumeHood:
+  - {fileID: 8300000, guid: ad8a3c75db053c54f8f827b2c6649bc1, type: 3}
+  openLockedCupboard:
   - {fileID: 8300000, guid: ad8a3c75db053c54f8f827b2c6649bc1, type: 3}
