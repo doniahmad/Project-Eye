@@ -16,7 +16,8 @@ MonoBehaviour:
   taskName: Dapatkan Alkohol
   dialogue:
     dialogueLines:
-    - line: Aku harus mencari Alkohol, karena alkohol sangatlah penting.
+    - line: Sekarang, aku perlu perlu mencari dan memasukkan alkohol untuk ramuan
+        ini.
   listSubtasks:
   - {fileID: 11400000, guid: afa5ffbdec84c384fb43d4d17964018d, type: 2}
   - {fileID: 11400000, guid: 01da6c558c99f5c408e3fc4cd7b3994b, type: 2}

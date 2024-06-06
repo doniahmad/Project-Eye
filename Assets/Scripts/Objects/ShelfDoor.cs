@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShelfDoor : BaseItem
 {
+    public static event EventHandler OnActionShelfSlide;
+
     [SerializeField] private float openRadius;
     [SerializeField] private float openSpeed = 2f;
 
@@ -30,6 +33,7 @@ public class ShelfDoor : BaseItem
         {
             CloseDoor();
         }
+        OnActionShelfSlide?.Invoke(this, EventArgs.Empty);
     }
 
     public void OpenDoor()

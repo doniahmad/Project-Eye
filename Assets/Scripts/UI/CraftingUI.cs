@@ -107,7 +107,10 @@ public class CraftingUI : MonoBehaviour
                 ClearCraftItem();
                 Hide();
                 CraftingMinigame.Instance.ResetCraftingMinigame();
-                // craftingDevice.ResetMaterial();
+                if (PhaseManager.Instance.currentPhase != 1)
+                {
+                    craftingDevice.ResetMaterial();
+                }
             }
         }
         craftingStatus = CraftingStatus.Crafted;
@@ -204,6 +207,7 @@ public class CraftingUI : MonoBehaviour
         UIManager.Instance.ShowOverlay();
         interactUI.onNewDisplay = false;
         container.SetActive(false);
+        GameManager.Instance.HideCursor();
     }
 
     public void Show()
@@ -211,6 +215,8 @@ public class CraftingUI : MonoBehaviour
         UIManager.Instance.HideOverlay();
         container.SetActive(true);
         interactUI.onNewDisplay = true;
+        GameManager.Instance.ShowCursor();
+
     }
 
     // public void HideCraftingUI()

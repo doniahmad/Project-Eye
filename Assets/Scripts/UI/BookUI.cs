@@ -78,6 +78,26 @@ public class BookUI : MonoBehaviour
     private void LoadBook()
     {
         bookRenderer.sprite = babBook.listBook[page];
+
+        if (page == babBook.listBook.Count - 1)
+        {
+            nextButton.interactable = false;
+        }
+        else
+        {
+
+            nextButton.interactable = true;
+        }
+
+        if (page == 0)
+        {
+            prevButton.interactable = false;
+        }
+        else
+        {
+
+            prevButton.interactable = true;
+        }
     }
 
     private void NextPage()
@@ -117,7 +137,7 @@ public class BookUI : MonoBehaviour
                     {
                         dialogueLines = new List<DialogueLine>{
                 new DialogueLine {line = "Aku harus menulis resep di papan tulis."}
-            }
+                }
                     });
                 }
             }
@@ -125,6 +145,7 @@ public class BookUI : MonoBehaviour
         UIManager.Instance.ShowOverlay();
         interactUI.onNewDisplay = false;
         container.SetActive(false);
+        GameManager.Instance.HideCursor();
     }
 
     public void Show()
@@ -136,6 +157,7 @@ public class BookUI : MonoBehaviour
         UIManager.Instance.HideOverlay();
         interactUI.onNewDisplay = true;
         container.SetActive(true);
+        GameManager.Instance.ShowCursor();
     }
 
     public int GetReadedPage()

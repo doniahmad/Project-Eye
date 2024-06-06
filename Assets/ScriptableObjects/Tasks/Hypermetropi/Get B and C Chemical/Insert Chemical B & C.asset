@@ -16,7 +16,8 @@ MonoBehaviour:
   isComplete: 0
   taskName: Masukkan Chemical kedalam Tempat Meramu.
   dialogue:
-    dialogueLines: []
+    dialogueLines:
+    - line: Aku harus memasukan ramuan ini ke Alat Peramu.
   taskCategory: 2
   itemsToGather: []
   itemToCraft: {fileID: 0}

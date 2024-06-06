@@ -15,7 +15,7 @@ MonoBehaviour:
   isComplete: 0
   PhaseTask: Monocromacy
   listTaskSO:
-  - {fileID: 11400000, guid: bb226c2693462154b854481a6ca0b96b, type: 2}
+  - {fileID: 11400000, guid: 96410e909b22af440a6875a81cc70eb0, type: 2}
   - {fileID: 11400000, guid: 7976ed08e675d1a4ba63cd34754c8487, type: 2}
   - {fileID: 11400000, guid: 0c88cd1be58953c49a891d6271690002, type: 2}
   - {fileID: 11400000, guid: ea68cf76c9d72e6408655c0dcaea5624, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Get E
   m_EditorClassIdentifier: 
   isComplete: 0
-  taskName: 
+  taskName: Dapatkan Ramuan E
   dialogue:
     dialogueLines: []
   listSubtasks:

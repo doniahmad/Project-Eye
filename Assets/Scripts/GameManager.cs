@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public TaskManager taskManager;
     public CutsceneManager cutsceneManager;
     public WhiteBoard whiteBoard;
+    public CraftingDeviceItem craftingDevice;
 
     private State state;
     private PhaseManager phaseManager;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.HideCursor();
         phaseManager = PhaseManager.Instance;
         OnStateChanged += GameManager_OnStateChanged;
         InputManager.Instance.OnPauseAction += InputManager_OnPauseAction;
@@ -89,6 +91,7 @@ public class GameManager : MonoBehaviour
                 cutsceneManager.StartCutScene();
                 player.SetPlayerStatus(PlayerStatus.Status.DirtyGloved);
                 whiteBoard.SetListTaskSO(phaseManager.hypermetropiaTask);
+                craftingDevice.ResetMaterial();
                 StartGameplay();
                 break;
             case PhaseManager.Phase.PhaseCataract:
@@ -129,6 +132,16 @@ public class GameManager : MonoBehaviour
         return state == State.GamePlaying;
     }
 
+    public void ShowCursor()
+    {
+        Cursor.visible = true;
+    }
+
+    public void HideCursor()
+    {
+        Cursor.visible = false;
+    }
+
     public void TogglePauseGame()
     {
         isGamePaused = !isGamePaused;
@@ -136,11 +149,13 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             OnGamePause?.Invoke(this, EventArgs.Empty);
+            ShowCursor();
         }
         else
         {
             Time.timeScale = 1f;
             OnGameUnpause?.Invoke(this, EventArgs.Empty);
+            HideCursor();
         }
     }
 }

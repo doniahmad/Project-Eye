@@ -16,7 +16,7 @@ MonoBehaviour:
   taskName: Basic Opersional
   dialogue:
     dialogueLines:
-    - line: Aku harus berusaha sebaik mungkin.
+    - line: Aku harus berusaha mengobatinya.
   listSubtasks:
   - {fileID: 11400000, guid: 3791ec1cea42af24bbd9d07b6ebddd9d, type: 2}
   - {fileID: 11400000, guid: fbd207b26e73b7f4197e0c749adac888, type: 2}

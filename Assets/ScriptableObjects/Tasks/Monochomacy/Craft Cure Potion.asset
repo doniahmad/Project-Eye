@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Craft Cure Potion
   m_EditorClassIdentifier: 
   isComplete: 0
-  taskName: 
+  taskName: Buat Ramuan Penyembuh
   dialogue:
     dialogueLines: []
   listSubtasks:

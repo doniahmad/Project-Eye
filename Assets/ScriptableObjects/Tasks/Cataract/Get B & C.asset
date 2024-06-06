@@ -15,7 +15,8 @@ MonoBehaviour:
   isComplete: 0
   taskName: Dapatkan Ramuan B dan C
   dialogue:
-    dialogueLines: []
+    dialogueLines:
+    - line: Aku harus meramu ramuan D lagi.
   listSubtasks:
   - {fileID: 11400000, guid: 1ad0742932415ab4eacc9ad5bbd24ec2, type: 2}
   - {fileID: 11400000, guid: 7baf19a188543a0449b0eae2f5610589, type: 2}

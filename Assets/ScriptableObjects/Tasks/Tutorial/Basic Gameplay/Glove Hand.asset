@@ -17,7 +17,7 @@ MonoBehaviour:
   taskName: Pakai Sarung Tangan
   dialogue:
     dialogueLines:
-    - line: Setelah mencuci, aku harus secepatnya menggunakan sarung tangan.
+    - line: Setelah mencuci tangan, aku harus secepatnya menggunakan sarung tangan.
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}

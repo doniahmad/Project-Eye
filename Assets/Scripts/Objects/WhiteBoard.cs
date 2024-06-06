@@ -45,36 +45,36 @@ public class WhiteBoard : BaseItem
         }
         if (player.GetPlayerStatus() == PlayerStatus.Status.AfterReadBook || Book.Instance.IsReaded)
         {
-            switch (PhaseManager.Instance.phase)
-            {
-                case PhaseManager.Phase.Tutorial:
-                    TutorialWhiteboardLine.SetActive(true);
-                    break;
-                case PhaseManager.Phase.PhaseHypermetropia:
-                    // TutorialWhiteboardLine.gameObject.GetComponentInChildren<GameObject>().SetActive(true);
-                    taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
-                    currentTaskSOs = listTaskSOs;
-                    HypermetropiaWhiteboardLine.SetActive(true);
-                    break;
-                case PhaseManager.Phase.PhaseCataract:
-
-                    taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
-                    currentTaskSOs = listTaskSOs;
-                    CataractWhiteboardLine.SetActive(true);
-
-                    break;
-                case PhaseManager.Phase.PhaseMonochromacy:
-
-                    taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
-                    currentTaskSOs = listTaskSOs;
-                    MonocromacyWhiteboardLine.SetActive(true);
-
-                    break;
-                case PhaseManager.Phase.PhaseBlind:
-                    break;
-            }
             if (!isWrited)
             {
+                switch (PhaseManager.Instance.phase)
+                {
+                    case PhaseManager.Phase.Tutorial:
+                        TutorialWhiteboardLine.SetActive(true);
+                        break;
+                    case PhaseManager.Phase.PhaseHypermetropia:
+                        // TutorialWhiteboardLine.gameObject.GetComponentInChildren<GameObject>().SetActive(true);
+                        taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
+                        currentTaskSOs = listTaskSOs;
+                        HypermetropiaWhiteboardLine.SetActive(true);
+                        break;
+                    case PhaseManager.Phase.PhaseCataract:
+
+                        taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
+                        currentTaskSOs = listTaskSOs;
+                        CataractWhiteboardLine.SetActive(true);
+
+                        break;
+                    case PhaseManager.Phase.PhaseMonochromacy:
+
+                        taskManager.SetListTaskSO(listTaskSOs.listTaskSO);
+                        currentTaskSOs = listTaskSOs;
+                        MonocromacyWhiteboardLine.SetActive(true);
+
+                        break;
+                    case PhaseManager.Phase.PhaseBlind:
+                        break;
+                }
                 player.SetPlayerStatus(PlayerStatus.Status.AfterWritingRecipe);
                 isWrited = true;
             }

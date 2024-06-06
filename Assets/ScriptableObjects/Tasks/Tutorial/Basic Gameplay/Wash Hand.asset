@@ -17,7 +17,8 @@ MonoBehaviour:
   taskName: Cuci Tangan di Wastafel
   dialogue:
     dialogueLines:
-    - line: Sebelum memulai pembuatan aku harus mencuci tangan agar steril.
+    - line: Sebelum melakukan sesuatu di lab, sebaiknya aku mencuci tangan terlebih
+        dahulu agar steril.
   taskCategory: 3
   itemsToGather: []
   itemToCraft: {fileID: 0}

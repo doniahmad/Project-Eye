@@ -15,6 +15,7 @@ MonoBehaviour:
   isComplete: 0
   taskName: Campurkan Item Yang Sudah didapatkan
   dialogue:
-    dialogueLines: []
+    dialogueLines:
+    - line: Sekarang aku harus meraciknya dengan tepat.
   listSubtasks:
   - {fileID: 11400000, guid: c82300c459837cc4bab9369a9b949b44, type: 2}

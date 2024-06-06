@@ -16,4 +16,6 @@ public class AudioClipRefSO : ScriptableObject
     public AudioClip[] notif;
     public AudioClip[] washtafel;
     public AudioClip[] craftingDevice;
+    public AudioClip[] fumeHood;
+    public AudioClip[] openLockedCupboard;
 }

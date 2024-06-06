@@ -9,9 +9,8 @@ public class Loader : MonoBehaviour
     {
         MainMenuScene,
         LoadingScene,
+        OpeningScene,
         LaboratoryScene,
-        FumehoodScene,
-        StorageScene
     }
 
     public static Scene targetScene;

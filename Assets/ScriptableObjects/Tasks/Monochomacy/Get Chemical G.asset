@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Get Chemical G
   m_EditorClassIdentifier: 
   isComplete: 0
-  taskName: 
+  taskName: Ambil Ramuan G
   dialogue:
     dialogueLines:
-    - line: Pertama - tama, aku butuh sebuah ramuan G
+    - line: Sekarang aku perlu ramuan G.
+    - line: Sepertinya aku menyimpannya di Gudang.
   listSubtasks:
   - {fileID: 11400000, guid: 6429c7a033e72ff4e906d2301e92a88a, type: 2}
   - {fileID: 11400000, guid: ebdc81f2a72ea254caa584deca212c97, type: 2}

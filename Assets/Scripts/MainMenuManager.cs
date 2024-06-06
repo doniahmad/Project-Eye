@@ -29,7 +29,7 @@ public class MainMenuManager : MonoBehaviour
         {
             Application.Quit();
         });
-
+        Cursor.visible = true;
     }
 
     public Button SetSelectedButton(Button selectedButton)
